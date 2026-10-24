@@ -18,6 +18,8 @@ interface ParseContext {
   anchors: (input: string) => string;
 }
 
+const LEGACY_NAMESPACES = new Set(['https://wiki.local/schema', 'https://wiki.local/schema/']);
+
 function warning(context: ParseContext, code: string, message: string, tag?: string): void {
   context.diagnostics.push({ code, severity: 'warning', message, tag });
 }
@@ -367,7 +369,7 @@ export function parseWikiXaml(source: string, fallbackSlug = 'article'): WikiDoc
   } else if (root.localName !== 'Article') {
     warning(context, 'SCH000', '根元素建议使用 <Article>', root.localName);
   }
-  if (root.namespaceURI && root.namespaceURI !== WIKI_NS) {
+  if (root.namespaceURI && root.namespaceURI !== WIKI_NS && !LEGACY_NAMESPACES.has(root.namespaceURI)) {
     warning(
       context,
       'SCH000',

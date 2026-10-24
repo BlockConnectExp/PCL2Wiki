@@ -60,6 +60,9 @@ export async function exportWorkspace(workspace: WorkspaceSnapshot): Promise<Blo
     })),
   );
 
+  const validation = safeParseManifest(manifest);
+  if (!validation.ok) throw new Error(`内容包字段不合法：${validation.message}`);
+
   const zip = new ZipWriter(new BlobWriter('application/zip'), { bufferedWrite: true });
   await zip.add('manifest.json', new TextReader(`${JSON.stringify(manifest, null, 2)}\n`));
 

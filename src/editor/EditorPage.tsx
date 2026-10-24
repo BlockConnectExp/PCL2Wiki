@@ -179,9 +179,13 @@ export function EditorPage() {
       notify('没有可导出的文稿');
       return;
     }
-    const blob = await exportWorkspace({ manifest, articles, assets });
-    downloadBlob(blob, `${manifest.id}-${manifest.version}.wikipkg`);
-    notify('内容包已导出');
+    try {
+      const blob = await exportWorkspace({ manifest, articles, assets });
+      downloadBlob(blob, `${manifest.id}-${manifest.version}.wikipkg`);
+      notify('内容包已导出');
+    } catch (error) {
+      notify(error instanceof Error ? error.message : String(error));
+    }
   };
 
   const handleAssetFiles = async (files: FileList | null) => {
