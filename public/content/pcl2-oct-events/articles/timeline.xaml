@@ -1,0 +1,150 @@
+<Article
+  xmlns="https://pcl2.n0th1n3ssd0ma1n.top/schema/1"
+  xmlns:md="https://pcl2.n0th1n3ssd0ma1n.top/markdown/1"
+  title="时间线：2026 年 10 月 20 日前后"
+  slug="timeline"
+  lang="zh-CN"
+  tags="十月事件,时间线,记录"
+  updated="2026-10-24"
+  summary="按小时记录下载功能停用、群聊转载、社区补救、谣言扩散与争议视频出现的全过程，每条都标注来源与可核验程度。">
+
+  <Infobox>
+    <Infobox.Field label="时间范围">2026-10-20 ~ 2026-10-24</Infobox.Field>
+    <Infobox.Field label="主要来源">本机 QQ 群聊存档（37 个会话 / 十月窗口）、公开视频与文章</Infobox.Field>
+    <Infobox.Field label="时区">UTC+8（本机）</Infobox.Field>
+    <Infobox.Field label="条目">15 个节点</Infobox.Field>
+  </Infobox>
+
+  <Note type="note">
+    <Paragraph>
+      时间线只记录**能指出来源的事件**。群聊里的说法一律标为「群内说法」，
+      不等于事实；官方表述标注发言人。涉及个人隐私的内容（证件、住址、亲属信息等）
+      **一律不收录、不转述**。
+    </Paragraph>
+  </Note>
+
+  <Section title="10 月 20 日">
+    <Heading level="3">15:00 – 16:00：下载功能停用与原因扩散</Heading>
+    <List type="unordered">
+      <ListItem>
+        **15:31 – 15:44**　多个群开始转发「PCL / HMCL 不再提供 MC 下载」的消息，
+        并转引 `@龙腾猫跃` 的动态「注：与网易微软麻将无关，中国式家长很神奇吧」。
+        PCL 官方群内的说明给出起因：某 MC 服务器出现未成年人充值被举报，PCL 被连带举报。
+      </ListItem>
+      <ListItem>
+        **15:51 – 16:00**　转发内容在 `EPSILON`、`大登招待所`、`dbcj生存服丨1群` 等群扩散；
+        同一时段有人给出「禁用更新」的做法（改 `Setup.ini` 或脚本禁用更新与公告）。
+      </ListItem>
+      <ListItem>
+        **16:14 – 16:25**　`Mass社区交流群`、`Minecraft无限世界` 等群转发同一批记录；
+        群内出现「三个俄裔家长」版本的说法（见 [常见误读与谣言清单](./misreadings.xaml)）。
+      </ListItem>
+    </List>
+
+    <Heading level="3">16:00 – 19:00：社区自救与补丁出现</Heading>
+    <List type="unordered">
+      <ListItem>
+        **16:00 前后**　有人上传「禁用 PCL 更新与公告.ps1」（大登招待所，@浩瀚星海）。
+      </ListItem>
+      <ListItem>
+        **16:47 / 17:27**　`Ryorin1337/pcl-patcher`（C#，dnlib IL patch）被多次转发；
+        稍后出现 `1244026418/PCL-Download-Fix`（离线恢复 2.99.0.0 的下载入口）。
+      </ListItem>
+      <ListItem>
+        **17:41**　`EPSILON` 群出现「出 PCL 注入后门教程」之类的发言，
+        属于当时的跟风玩笑，与后来的演示视频不是一回事。
+      </ListItem>
+      <ListItem>
+        **19:14 – 19:18**　`Elowen Public` 群管理组发出重要提醒：
+        不要在群里下载任何「PCL 改版 / 解锁版」可执行文件，已收到植入木马的反馈；
+        已更新用户可用属性回滚或改用第三方补丁。
+      </ListItem>
+    </List>
+
+    <Heading level="3">19:00 – 24:00：应对、替代与第一次争议</Heading>
+    <List type="unordered">
+      <ListItem>
+        **19:30 前后**　群内开始分享 `PCL2 CE`（社区版）与旧版本本体，
+        并提醒「更新后请禁用自动更新」。
+      </ListItem>
+      <ListItem>
+        **20:55 – 21:38**　围绕补救方案出现多条合并转发与教程视频
+        （含「一键恢复下载」类脚本），真伪混杂。
+      </ListItem>
+      <ListItem>
+        **23:23**　`沉痛哀悼｜PCL下载MC功能被关停😭` 群出现一份整理版说法：
+        起因未成年充值 + 私服举报 → 连带举报启动器；建议修改 `SystemSystemUpdate`。
+        其中「龙猫面临处罚」等表述**未见官方证实**。
+      </ListItem>
+    </List>
+  </Section>
+
+  <Section title="10 月 21 日">
+    <List type="unordered">
+      <ListItem>
+        **凌晨**　针对个人的攻击材料开始在群聊中传播（涉及隐私）。
+        本站**不予收录、不予转述**，也不提供任何检索入口。
+      </ListItem>
+      <ListItem>
+        **04:26**　`Mass社区交流群` 转发 B 站视频《PCL unlimited 恢复国际版下载》，
+        即后来的争议视频之一（见 [争议视频归档](./videos.xaml)）。
+      </ListItem>
+      <ListItem>
+        **当天**　cubk 发布评论文章《PCL 2的意识形态》，
+        随后被多个群转发（10-23 仍在传播）。
+      </ListItem>
+    </List>
+  </Section>
+
+  <Section title="10 月 22 日 – 10 月 24 日">
+    <List type="unordered">
+      <ListItem>
+        **10-22 起**　争议视频（后门演示 / 2.99.0 二进制分析）在群聊与视频平台扩散，
+        讨论从「能不能下载」转向「启动器有没有远程控制能力」。
+      </ListItem>
+      <ListItem>
+        **10-22 – 10-23**　围绕视频出现新的传言与二次创作，
+        包括对作者与相关方的指控；同一时段视频作者声明了自己的结论边界。
+      </ListItem>
+      <ListItem>
+        **10-24**　社群仍在整理素材；本站的群聊存档、图片素材与视频原件也在这一天归档。
+      </ListItem>
+    </List>
+  </Section>
+
+  <Section title="时间线里容易搞错的三件事">
+    <Table>
+      <TableRow header="true">
+        <TableCell>说法</TableCell>
+        <TableCell>实际情况</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>「网易举报了 PCL」</TableCell>
+        <TableCell>官方群内的说法是 MC 私服被举报后**连带**举报 PCL；网易与本次关停无直接关系。应用商店搜不到《我的世界》是网易关闭渠道服的独立事件。</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>「三个俄裔家长举报的」</TableCell>
+        <TableCell>名单里的三个名字是《战争雷霆》开发商成员，属于圈内梗被当成事实传播，**没有任何证据**。</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>「PCL 已经偷号 / 已有人被控制」</TableCell>
+        <TableCell>现有公开材料支持的是「公告系统具备远程动作能力」这一**能力判断**；是否被真实利用，需要独立证据。</TableCell>
+      </TableRow>
+    </Table>
+  </Section>
+
+  <SeeAlso>
+    <Link slug="origins" title="起因：家长举报与渠道服关闭" />
+    <Link slug="misreadings" title="常见误读与谣言清单" />
+    <Link slug="videos" title="争议视频归档：后门演示与「云控」分析" />
+    <Link slug="evidence" title="证据存档预览" />
+    <Link slug="sources" title="资料来源与存档说明" />
+  </SeeAlso>
+
+  <References>
+    <Ref id="1">本机 QQ 群聊存档（2631167053），2026-10-18 ~ 2026-10-26 窗口，含 37 个会话。</Ref>
+    <Ref id="2">`@龙腾猫跃` bilibili 动态，2026-10-20。</Ref>
+    <Ref id="3">cubk《PCL 2的意识形态》，2026-10-21，本内容包内已存档快照。</Ref>
+    <Ref id="4">争议视频作者在视频中的自我限定（见视频条目）。</Ref>
+  </References>
+</Article>

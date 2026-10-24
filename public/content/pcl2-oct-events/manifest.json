@@ -2,7 +2,7 @@
   "spec": "pcl2wiki-package/1",
   "id": "pcl2-oct-events",
   "title": "PCL2 十月事件",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "language": "zh-CN",
   "entry": "articles/ideology-of-pcl.xaml",
   "description": "PCL2 十月事件（下载功能关闭风波）的事件记录、存档与社区反应。",
@@ -42,6 +42,84 @@
       ],
       "updated": "2026-10-24",
       "summary": "十月事件起因页引用的 8 张原始证据截图，按官方表态、群聊记录与应用商店现状分组为滚动画廊。"
+    },
+    {
+      "slug": "videos",
+      "title": "争议视频归档：后门演示与「云控」分析",
+      "source": "articles/videos.xaml",
+      "tags": [
+        "十月事件",
+        "争议",
+        "视频",
+        "证据",
+        "存档"
+      ],
+      "updated": "2026-10-24",
+      "summary": "事件中传播最广的两段视频的原件归档与转录：一段演示借公告下发实现远程命令执行，一段分析 PCL 2.99.0 的公告动作能力。含作者自设的结论边界、可复核的技术链条，以及关于投诉与网络暴力的说明。"
+    },
+    {
+      "slug": "timeline",
+      "title": "时间线：2026 年 10 月 20 日前后",
+      "source": "articles/timeline.xaml",
+      "tags": [
+        "十月事件",
+        "时间线",
+        "记录"
+      ],
+      "updated": "2026-10-24",
+      "summary": "按小时记录下载功能停用、群聊转载、社区补救、谣言扩散与争议视频出现的全过程，每条都标注来源与可核验程度。"
+    },
+    {
+      "slug": "misreadings",
+      "title": "常见误读与谣言清单",
+      "source": "articles/misreadings.xaml",
+      "tags": [
+        "十月事件",
+        "误读",
+        "谣言",
+        "澄清"
+      ],
+      "updated": "2026-10-24",
+      "summary": "把事件中流传最广的十条说法逐条拆开：哪部分是事实、哪部分是推论、哪部分纯属编造，并标出判断依据。"
+    },
+    {
+      "slug": "community-fixes",
+      "title": "社区应对：补丁、替代启动器与风险",
+      "source": "articles/community-fixes.xaml",
+      "tags": [
+        "十月事件",
+        "社区",
+        "补丁",
+        "替代方案"
+      ],
+      "updated": "2026-10-24",
+      "summary": "下载功能停用后的五类应对方式：停用更新、保留旧版、第三方补丁、改用其它启动器、官方启动器迁回，以及每一类的代价与风险。"
+    },
+    {
+      "slug": "announce-actions",
+      "title": "公告系统与远程动作：技术分析",
+      "source": "articles/announce-actions.xaml",
+      "tags": [
+        "十月事件",
+        "技术分析",
+        "公告系统",
+        "安全"
+      ],
+      "updated": "2026-10-24",
+      "summary": "把「公告能做什么」讲清楚：动作清单、无按钮分支、设置写入到命令执行的调用链、关闭公告的判定、遥测与源码差异，并明确哪些结论超出证据范围。"
+    },
+    {
+      "slug": "sources",
+      "title": "资料来源与存档说明",
+      "source": "articles/sources.xaml",
+      "tags": [
+        "十月事件",
+        "存档",
+        "来源",
+        "方法论"
+      ],
+      "updated": "2026-10-24",
+      "summary": "本站用了哪些材料、怎么采集与校验、哪些内容已公开存档、哪些内容只保留在本地而不公开，以及如何引用。"
     }
   ],
   "assets": [
@@ -218,6 +296,42 @@
       "sha256": "a1991f2676f636842e799b3b974b19c4ed319c42a8952432cb4efde319a3db63",
       "bytes": 253719,
       "mime": "application/zip"
+    },
+    {
+      "path": "archive/videos/video1-pcl-demo.mp4",
+      "sha256": "d4abc553fde2c0e5bef76080f5ce5ed73d33f0c077584a1ab23678b8f265d19e",
+      "bytes": 1122611,
+      "mime": "video/mp4"
+    },
+    {
+      "path": "archive/videos/video2-cloud-control-analysis.mp4",
+      "sha256": "6cb48e38f208453874dedf1225d174b2c2413d07462cb4e58f00abe5afcabd9c",
+      "bytes": 4388012,
+      "mime": "video/mp4"
+    },
+    {
+      "path": "archive/videos/video1-transcript.md",
+      "sha256": "0b4d126edc7e751043d4a1a275d580cb73d849f6d523e8fc70e3b58ee2c58db1",
+      "bytes": 3610,
+      "mime": "text/markdown"
+    },
+    {
+      "path": "archive/videos/video2-transcript.md",
+      "sha256": "ff2174c2f7d823d533f83f8a40d65164e5530ed2147fa4d2e88423eef3acd010",
+      "bytes": 8346,
+      "mime": "text/markdown"
+    },
+    {
+      "path": "assets/evidence/oct/09-yueliangdao-claim.webp",
+      "sha256": "7911d02caa3d7e61cc4c4c801c779759d8724516bd33b1966c4d93d142059fd4",
+      "bytes": 87160,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/10-pcl-settings.webp",
+      "sha256": "165fdc96d36c73a6b20c5b6e2f5dcd0d54378fcc2a10d9a9c3b29ba3bf931f9d",
+      "bytes": 37172,
+      "mime": "image/webp"
     }
   ],
   "generator": "pcl2wiki-archive/0.1.0",

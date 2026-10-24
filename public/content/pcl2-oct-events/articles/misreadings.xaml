@@ -1,0 +1,120 @@
+<Article
+  xmlns="https://pcl2.n0th1n3ssd0ma1n.top/schema/1"
+  xmlns:md="https://pcl2.n0th1n3ssd0ma1n.top/markdown/1"
+  title="常见误读与谣言清单"
+  slug="misreadings"
+  lang="zh-CN"
+  tags="十月事件,误读,谣言,澄清"
+  updated="2026-10-24"
+  summary="把事件中流传最广的十条说法逐条拆开：哪部分是事实、哪部分是推论、哪部分纯属编造，并标出判断依据。">
+
+  <Infobox>
+    <Infobox.Field label="条目">10 条常见说法</Infobox.Field>
+    <Infobox.Field label="判断口径">官方表述 / 可复核代码 / 群内说法 / 无来源</Infobox.Field>
+    <Infobox.Field label="更新">2026-10-24</Infobox.Field>
+  </Infobox>
+
+  <Note type="important">
+    <Paragraph>
+      本页只做**归类**，不评价个人。凡涉及具体自然人身份、亲属、证件、住址的传言，
+      本站一律不收录也不转述；把未经证实的「举报人」当成靶子，本身就是新一轮伤害。
+    </Paragraph>
+  </Note>
+
+  <Section title="一、关于起因">
+    <Heading level="3">1. 「网易把 PCL 举报了」——说法不成立</Heading>
+    <Paragraph>
+      PCL 官方群内的说明是：某 MC 服务器出现未成年人充值后被举报，
+      **PCL 被连带举报**，与网易没有关系。`@龙腾猫跃` 的动态也写了「与网易微软麻将无关」。
+      网易真正相关的另一件事是关闭《我的世界》中国版的渠道服，导致部分应用商店搜不到本体——
+      那是独立事件，见 [起因条目](./origins.xaml)。
+    </Paragraph>
+
+    <Heading level="3">2. 「三个俄裔家长举报的」——圈内梗被当成事实</Heading>
+    <Paragraph>
+      名单中的「维亚切斯拉夫·巴兰尼科夫」「安东·尤丁采夫」「尼基塔·布亚诺夫」
+      是《战争雷霆》开发商 Gaijin 的开发者姓名，被拿来当作模板玩梗，
+      在多个群里被复制传播。**没有任何证据**支持这个说法，请勿再传播。
+    </Paragraph>
+
+    <Heading level="3">3. 「举报人就是某位未成年玩家 / 某位群友」——无来源，且涉及隐私</Heading>
+    <Paragraph>
+      事件期间出现过若干指向具体个人的「凶手」说法，并伴随人肉与证件照片传播。
+      这些内容没有可核验的来源，且已经构成对个人的侵害。本站不收录、不检索、不转载。
+    </Paragraph>
+  </Section>
+
+  <Section title="二、关于版本与「后门」">
+    <Heading level="3">4. 「所有版本的 PCL 都有后门」——超出证据范围</Heading>
+    <Paragraph>
+      公开视频针对的是 **PCL 2.99.0.0** 这一具体二进制。
+      能确认的是「该版本的公告系统具备远程动作能力」，
+      不能直接推出其它版本、尤其是更早版本具有同样实现。
+      要做版本判断，需要对对应版本单独复核。
+    </Paragraph>
+
+    <Heading level="3">5. 「已经有人被盗号 / 电脑已经被控制」——目前没有公开证据</Heading>
+    <Paragraph>
+      争议视频作者自己划定的边界是：证据支持「存在远程控制能力与权限边界问题」，
+      **不支持**「开发者已经恶意使用」「已经盗号」「任意互联网用户均可入侵」。
+      把能力判断升级成事故判断，需要新的独立证据。
+    </Paragraph>
+
+    <Heading level="3">6. 「关掉『关闭所有公告』就安全了」——挡不住</Heading>
+    <Paragraph>
+      分析指出该偏好的判定是「用户设置值 vs 服务端重要等级」，
+      等级为 2 时比较结果为假，不会因此跳过公告动作；缺省重要等级同样为 2。
+      因此它不能当作无条件的关闭开关。细节见 [争议视频归档](./videos.xaml)。
+    </Paragraph>
+  </Section>
+
+  <Section title="三、关于替代方案">
+    <Heading level="3">7. 「PCL CE / 社区版就是官方版」——不是</Heading>
+    <Paragraph>
+      社区版由第三方维护，与原版 PCL 不是同一发布渠道。使用它可以，
+      但把它称作「官方版」会误导别人；本次事件里也有人拿「社区版」的名义分发来路不明的文件。
+    </Paragraph>
+
+    <Heading level="3">8. 「改版 PCL 可以一键恢复下载」——风险很高</Heading>
+    <Paragraph>
+      群管理组 2026-10-20 的提醒原文是：不要下载任何「解锁版 / 恢复版 / 增强版 / 绿色整合包」，
+      已收到重新打包并植入盗号木马与后门的反馈。需要恢复功能时，
+      优先使用能核对源码与提交记录的方案，并自行校验文件哈希。
+    </Paragraph>
+
+    <Heading level="3">9. 「旧版本 + 关闭更新就没事」——只是权宜</Heading>
+    <Paragraph>
+      旧版本能继续用，但停用更新的代价是不再获得修复；
+      而公告系统的风险并不会因为停止更新自动消失。具体做法（改 `Setup.ini`、脚本禁用）
+      只在群内流传，本站不背书任何脚本，请自行审查代码。
+    </Paragraph>
+
+    <Heading level="3">10. 「PCL 已经关站 / 停止维护」——夸大了</Heading>
+    <Paragraph>
+      被关闭的是**下载 MC 本体与整合包的功能**，不是整个启动器；
+      启动、管理实例等核心功能仍在。把「下载功能停用」说成「PCL 死了」，
+      会让读者误判可用范围。
+    </Paragraph>
+  </Section>
+
+  <Section title="怎么自己判断一条传言">
+    <List type="ordered">
+      <ListItem>**看来源**：是官方账号/原始截图，还是「听说」「群里看到的」。</ListItem>
+      <ListItem>**看时间**：事件期间的说法经常在几小时内被推翻，发帖时间比内容更需要确认。</ListItem>
+      <ListItem>**看是否有可复核材料**：代码、哈希、原始文件、可复现步骤，比转述可靠。</ListItem>
+      <ListItem>**看是否要求你去伤害谁**：任何指向具体个人的人肉、辱骂、骚扰，都不是证据。</ListItem>
+    </List>
+  </Section>
+
+  <SeeAlso>
+    <Link slug="timeline" title="时间线：2026 年 10 月 20 日前后" />
+    <Link slug="origins" title="起因：家长举报与渠道服关闭" />
+    <Link slug="videos" title="争议视频归档：后门演示与「云控」分析" />
+  </SeeAlso>
+
+  <References>
+    <Ref id="1">本机 QQ 群聊存档，2026-10-20 ~ 2026-10-24（含各群管理组提醒原文）。</Ref>
+    <Ref id="2">`@龙腾猫跃` bilibili 动态与群内说明，2026-10-20。</Ref>
+    <Ref id="3">争议视频 v2 作者的自我限定（见视频条目）。</Ref>
+  </References>
+</Article>

@@ -1,0 +1,111 @@
+<Article
+  xmlns="https://pcl2.n0th1n3ssd0ma1n.top/schema/1"
+  xmlns:md="https://pcl2.n0th1n3ssd0ma1n.top/markdown/1"
+  title="资料来源与存档说明"
+  slug="sources"
+  lang="zh-CN"
+  tags="十月事件,存档,来源,方法论"
+  updated="2026-10-24"
+  summary="本站用了哪些材料、怎么采集与校验、哪些内容已公开存档、哪些内容只保留在本地而不公开，以及如何引用。">
+
+  <Infobox>
+    <Infobox.Field label="存档形态">内容包内 `archive/` 与 `assets/`</Infobox.Field>
+    <Infobox.Field label="群聊语料">37 个会话 / 2026-10-18 ~ 10-26 窗口</Infobox.Field>
+    <Infobox.Field label="视频">2 段原件 + 转录稿</Infobox.Field>
+    <Infobox.Field label="本地图库">约 2000 张（按隐私规则选择性公开）</Infobox.Field>
+  </Infobox>
+
+  <Note type="note">
+    <Paragraph>
+      本站的原则是**能核验的才写、涉及个人的不写**。所有引用都注明来源与时间；
+      群聊内容属于当事人之间的私人交流，只公开与事件直接相关、
+      且不涉及身份信息的部分。
+    </Paragraph>
+  </Note>
+
+  <Section title="材料清单">
+    <Table>
+      <TableRow header="true">
+        <TableCell>材料</TableCell>
+        <TableCell>范围</TableCell>
+        <TableCell>在本站的用法</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>本机 QQ 群聊存档</TableCell>
+        <TableCell>2631167053 账号的本地记录，2026-10-18 ~ 10-26 窗口，37 个会话</TableCell>
+        <TableCell>时间线、起因、误读清单的事实底稿</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>合并转发正文归档</TableCell>
+        <TableCell>十月窗口 60 张卡片，展开为 453 条消息</TableCell>
+        <TableCell>核对群内转发内容的原始表述</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>争议视频</TableCell>
+        <TableCell>2 段原件（0:59 / 3:56）、2 份转录稿</TableCell>
+        <TableCell>视频条目内嵌播放，附作者自设边界</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>公开文章与动态</TableCell>
+        <TableCell>cubk 评论文章、`@龙腾猫跃` 动态、公开仓库</TableCell>
+        <TableCell>第三方观点与官方表态</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>本地图片素材库</TableCell>
+        <TableCell>约 2000 张（来自同一窗口的群聊图片）</TableCell>
+        <TableCell>仅挑选可核实、无隐私风险者公开展示</TableCell>
+      </TableRow>
+    </Table>
+  </Section>
+
+  <Section title="怎么采集与校验">
+    <List type="ordered">
+      <ListItem>**只读采集**：本地聊天记录用只读方式解密导出，不改动原始数据库。</ListItem>
+      <ListItem>**在线展开**：合并转发卡片的内嵌正文通过登录后的客户端在线拉取，避免依赖截图转述。</ListItem>
+      <ListItem>**逐条留痕**：每张证据图都记录来源群、发布者、时间；文章里引用时对应到编号。</ListItem>
+      <ListItem>**区分层级**：官方表述、可复核代码、群内说法、无来源传言分四档标注。</ListItem>
+      <ListItem>**不收录隐私**：证件、住址、亲属、电话等一律不进入公开包。</ListItem>
+    </List>
+  </Section>
+
+  <Section title="已公开存档的内容">
+    <List type="unordered">
+      <ListItem>`archive/videos/`　两段争议视频原件与转录稿。</ListItem>
+      <ListItem>`archive/cubk/`　cubk《PCL 2的意识形态》的文章正文、页面快照与截图。</ListItem>
+      <ListItem>`archive/chat/`　起因相关的群聊转录（已附 @ 标识）与原始素材包。</ListItem>
+      <ListItem>`assets/evidence/`　本站正文引用的证据截图（含编号）。</ListItem>
+    </List>
+  </Section>
+
+  <Section title="不公开的部分与原因">
+    <List type="unordered">
+      <ListItem>涉及具体个人身份的截图与文档（证件、住址、亲属信息、联系方式）。</ListItem>
+      <ListItem>与事件无关的私人对话（好友聊天、无关群聊）。</ListItem>
+      <ListItem>未经核实、可能构成诽谤的指控内容（例如指名道姓的「举报人」说法）。</ListItem>
+      <ListItem>仍可能带来安全风险的文件（来路不明的改版程序、样本）。</ListItem>
+    </List>
+    <Paragraph>
+      这些材料在本地素材库里保留，用于核对与后续更新，但不进入公开仓库与站点。
+    </Paragraph>
+  </Section>
+
+  <Section title="引用方式">
+    <Paragraph>
+      引用本站内容时，请一并保留**证据编号**与**时间**，
+      并注明「转引自 PCL2 十月事件维基」。若发现错误或新的材料，
+      欢迎通过仓库 Issue 指出；涉及个人的内容我们不会因为「有争议」就放行。
+    </Paragraph>
+  </Section>
+
+  <SeeAlso>
+    <Link slug="timeline" title="时间线：2026 年 10 月 20 日前后" />
+    <Link slug="evidence" title="证据存档预览" />
+    <Link slug="videos" title="争议视频归档：后门演示与「云控」分析" />
+  </SeeAlso>
+
+  <References>
+    <Ref id="1">本机 QQ 群聊存档与合并转发展开归档，2026-10-24 生成。</Ref>
+    <Ref id="2">Owner 提供的争议视频原件与转录稿。</Ref>
+    <Ref id="3">cubk《PCL 2的意识形态》页面快照（2026-10-24 存档）。</Ref>
+  </References>
+</Article>

@@ -1,0 +1,156 @@
+<Article
+  xmlns="https://pcl2.n0th1n3ssd0ma1n.top/schema/1"
+  xmlns:md="https://pcl2.n0th1n3ssd0ma1n.top/markdown/1"
+  title="公告系统与远程动作：技术分析"
+  slug="announce-actions"
+  lang="zh-CN"
+  tags="十月事件,技术分析,公告系统,安全"
+  updated="2026-10-24"
+  summary="把「公告能做什么」讲清楚：动作清单、无按钮分支、设置写入到命令执行的调用链、关闭公告的判定、遥测与源码差异，并明确哪些结论超出证据范围。">
+
+  <Infobox>
+    <Infobox.Field label="分析对象">PCL 2.99.0.0（公开视频所分析的具体版本）</Infobox.Field>
+    <Infobox.Field label="来源">公开视频分析 + 群聊转述</Infobox.Field>
+    <Infobox.Field label="结论强度">能力判断（非事故判断）</Infobox.Field>
+  </Infobox>
+
+  <Note type="warning">
+    <Paragraph>
+      本页整理的是**视频作者的逆向分析结论**，本站未独立复现全部细节。
+      凡是超出「代码里存在什么能力」的判断，本页都会显式标注为**未证实**。
+    </Paragraph>
+  </Note>
+
+  <Section title="公告系统本来应该做什么">
+    <Paragraph>
+      启动器拉取服务端公告，按**编号、条件、用户偏好**过滤，然后显示对话框，
+      或者（在有按钮时）等待用户点击。这条链路本身很常见：
+      强制更新、活动提示、故障通知都依赖它。
+    </Paragraph>
+    <Paragraph>
+      问题出在链路的**分支**上：当公告不带按钮时，代码会直接执行公告自带的动作。
+      也就是说，弹窗不是所有动作的必经确认步骤。
+    </Paragraph>
+  </Section>
+
+  <Section title="公告动作清单">
+    <Table>
+      <TableRow header="true">
+        <TableCell>动作</TableCell>
+        <TableCell>实现</TableCell>
+        <TableCell>直接后果</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>`stop`</TableCell>
+        <TableCell>`EndProgram(SendWarning: false)`</TableCell>
+        <TableCell>启动器退出（不等于结束已运行的游戏）</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>`setup`</TableCell>
+        <TableCell>`Settings.Set`</TableCell>
+        <TableCell>写入已注册、类型兼容的设置项</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>`update` / `clientupdate`</TableCell>
+        <TableCell>`UpdateStart`</TableCell>
+        <TableCell>触发更新流程</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>`copy`</TableCell>
+        <TableCell>`ClipboardSet`</TableCell>
+        <TableCell>改写剪贴板文本</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>`website`</TableCell>
+        <TableCell>`OpenWebsite`</TableCell>
+        <TableCell>打开链接（经过网址前缀检查）</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>`uniqueaddress`</TableCell>
+        <TableCell>与 `ModBase.Identify` 比较</TableCell>
+        <TableCell>按客户端标识做条件判断</TableCell>
+      </TableRow>
+    </Table>
+    <Paragraph>
+      另外还有版本、启动次数、随机比例、主题、部分设置等**条件分发**能力，
+      可以让同一条公告只对满足条件的客户端生效。
+    </Paragraph>
+  </Section>
+
+  <Section title="关键链条：写设置 → 启动时执行">
+    <Paragraph>
+      `setup` 之所以危险，是因为它写的是**通用设置**，而不是专用字段。
+      在已知的注册设置里，有一条会在游戏启动到特定阶段时被交给命令行执行：
+    </Paragraph>
+
+    <CodeBlock language="text" title="视频描述的调用链">
+公告动作 actions.setup
+  → Settings.Set("LaunchAdvanceRun", 任意命令)
+  → 用户之后正常启动游戏
+  → 启动流程到达自定义命令阶段
+  → cmd.exe /c 任意命令
+    </CodeBlock>
+
+    <Paragraph>
+      这条链意味着：**只要有办法让客户端接受一条公告，就能把一个「延迟执行」的命令写进配置**。
+      它不需要用户在当下点击任何按钮，只需要用户以后正常启动一次游戏。
+    </Paragraph>
+  </Section>
+
+  <Section title="几个容易被误解的细节">
+    <Heading level="3">「关闭所有公告」不是安全开关</Heading>
+    <Paragraph>
+      该偏好的判定方式是：把用户设置的值与服务端给出的重要等级相比
+      （形如「2 大于 2 吗」，结果为假），缺省重要等级同样是 2；
+      因此当公告等级为 2 时，用户选择「关闭所有公告」并不会跳过公告动作。
+      其它适用条件仍然要满足。
+    </Paragraph>
+
+    <Heading level="3">「无弹窗」不等于「无痕」</Heading>
+    <Paragraph>
+      没有弹窗只针对公告本身的分支。打开网站可能弹出浏览器，更新流程本身带提示，
+      结束启动器会直接退出——这些是可见的。
+    </Paragraph>
+
+    <Heading level="3">遥测是独立的一层</Heading>
+    <Paragraph>
+      正式版注册的 `SystemSystemTelemetry` 默认值为 `true`，`ModMain.Telemetry`
+      会检查该开关，并向腾讯云日志服务的 `track` 端点发送事件数据。
+      这属于**遥测**，与上面的远程动作能力是两件事；但「默认开启」本身值得知道。
+    </Paragraph>
+  </Section>
+
+  <Section title="开源版与发行版的差异">
+    <List type="unordered">
+      <ListItem>公开源码的 `ModSecret.vb` 首行注明：由于包含加解密等安全信息，部分代码已被删除。</ListItem>
+      <ListItem>该公开文件里的 `ServerLoader` 是简化实现，日志写着「该版本中不包含更新通知功能」。</ListItem>
+      <ListItem>这与二进制中实际存在的公告处理器不一致，是视频作者提出质疑的主要依据之一。</ListItem>
+    </List>
+    <Paragraph>
+      这一点能说明「公开源码不等于发行版行为」，但**不能**单凭它推出动机，
+      更不能推出「已经对用户做了什么」。
+    </Paragraph>
+  </Section>
+
+  <Section title="自查清单">
+    <List type="ordered">
+      <ListItem>确认自己在用的具体版本号，而不是笼统说「最新版」。</ListItem>
+      <ListItem>检查 `PCL` 目录下的配置文件，留意与「启动前运行命令」相关的项。</ListItem>
+      <ListItem>在隔离环境（虚拟机/沙箱）里跑启动器，观察异常外连与子进程。</ListItem>
+      <ListItem>对可执行文件做哈希基线，更新后比对变化。</ListItem>
+      <ListItem>需要严谨结论时，以对应版本的二进制复核为准，而不是转述视频。</ListItem>
+    </List>
+  </Section>
+
+  <SeeAlso>
+    <Link slug="videos" title="争议视频归档：后门演示与「云控」分析" />
+    <Link slug="community-fixes" title="社区应对：补丁、替代启动器与风险" />
+    <Link slug="misreadings" title="常见误读与谣言清单" />
+  </SeeAlso>
+
+  <References>
+    <Ref id="1">争议视频 v2（PCL 2.99.0.0 公告能力分析）及其转录稿，Owner 提供。</Ref>
+    <Ref id="2">争议视频 v1（公告下发到远程命令执行演示）及其转录稿，Owner 提供。</Ref>
+    <Ref id="3">群聊存档中关于「禁用更新 / 公告」的做法讨论，2026-10-20。</Ref>
+  </References>
+</Article>

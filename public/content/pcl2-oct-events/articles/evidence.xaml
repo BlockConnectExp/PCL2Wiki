@@ -6,13 +6,13 @@
   lang="zh-CN"
   tags="十月事件,证据,存档"
   updated="2026-10-24"
-  summary="十月事件起因页引用的 8 张原始证据截图，按官方表态、群聊记录与应用商店现状分组为滚动画廊。">
+  summary="十月事件引用的 10 张原始证据截图，按官方表态、群聊记录、应用商店现状与后续说法分组为滚动画廊。">
 
   <Infobox>
-    <Infobox.Field label="素材">8 张截图 + 文字转录 + 原始 zip</Infobox.Field>
+    <Infobox.Field label="素材">10 张截图 + 2 段视频 + 文字转录 + 原始 zip</Infobox.Field>
     <Infobox.Field label="来源">@天养 群聊导出（Owner 提供）</Infobox.Field>
     <Infobox.Field label="时间">2026-10-20</Infobox.Field>
-    <Infobox.Field label="编号">e1 – e8</Infobox.Field>
+    <Infobox.Field label="编号">e1 – e10</Infobox.Field>
   </Infobox>
 
   <Note type="note">
@@ -45,6 +45,20 @@
     </Gallery>
   </Section>
 
+  <Section title="后续流传的说法（10-20 傍晚）">
+    <Gallery>
+      <Media id="e9" label="证据 e9" src="./assets/evidence/oct/09-yueliangdao-claim.webp" type="image" caption="群内在 17:15 前后转发的「月亮岛服主远程控制未成年玩家充值」说法整理图（Mass社区交流群）。**这是当时流传的说法，本站未独立核实**。原文保留以记录传播链。" />
+      <Media id="e10" label="证据 e10" src="./assets/evidence/oct/10-pcl-settings.webp" type="image" caption="10-20 17:17 由 @毛毛虫 在 Elowen Public 群发布的启动器设置界面截图，用于说明当时讨论的「关闭更新 / 调整设置」做法。" />
+    </Gallery>
+    <Note type="important">
+      <Paragraph>
+        e9 属于**未经核实的说法**：它解释的是社区当时为什么把矛头指向某个私服，
+        但其中涉及当事人身份与动机的部分没有任何可核验来源。本站保留原图是为了记录传播链，
+        不代表认可其内容；也提醒读者不要把截图里的指控当成结论。
+      </Paragraph>
+    </Note>
+  </Section>
+
   <Section title="下载">
     <Media src="./archive/chat/tianyang-2026-10-20-transcript.md" type="file" caption="文字转录（Markdown，已附 @ 标识）" />
     <Media src="./archive/chat/tianyang-2026-10-20.zip" type="file" caption="原始群聊素材（zip，8 张截图，含原始文件名）" />
@@ -52,7 +66,10 @@
 
   <SeeAlso>
     <Link slug="origins" title="起因：家长举报与渠道服关闭" />
-    <Link slug="ideology-of-pcl" title="PCL 2 的意识形态（cubk 存档）" />
+    <Link slug="timeline" title="时间线：2026 年 10 月 20 日前后" />
+    <Link slug="videos" title="争议视频归档：后门演示与「云控」分析" />
+    <Link slug="misreadings" title="常见误读与谣言清单" />
+    <Link slug="sources" title="资料来源与存档说明" />
   </SeeAlso>
 
   <References>

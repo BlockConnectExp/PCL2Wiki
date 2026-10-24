@@ -1,0 +1,110 @@
+<Article
+  xmlns="https://pcl2.n0th1n3ssd0ma1n.top/schema/1"
+  xmlns:md="https://pcl2.n0th1n3ssd0ma1n.top/markdown/1"
+  title="社区应对：补丁、替代启动器与风险"
+  slug="community-fixes"
+  lang="zh-CN"
+  tags="十月事件,社区,补丁,替代方案"
+  updated="2026-10-24"
+  summary="下载功能停用后的五类应对方式：停用更新、保留旧版、第三方补丁、改用其它启动器、官方启动器迁回，以及每一类的代价与风险。">
+
+  <Infobox>
+    <Infobox.Field label="时间">2026-10-20 起</Infobox.Field>
+    <Infobox.Field label="来源">群聊转载 + 公开仓库</Infobox.Field>
+    <Infobox.Field label="立场">记录公开信息，不背书任何补丁或改版</Infobox.Field>
+  </Infobox>
+
+  <Note type="danger">
+    <Paragraph>
+      事件期间已有**植入木马的「改版 PCL」**在群里流传，多个群的管理组发过提醒。
+      下面出现的仓库与做法都是当时公开流传的内容，**本站不对其安全性、合法性或可用性负责**；
+      使用任何第三方程序前请自行审查代码并核对哈希。
+    </Paragraph>
+  </Note>
+
+  <Section title="五类应对方式">
+    <Table>
+      <TableRow header="true">
+        <TableCell>方式</TableCell>
+        <TableCell>做法</TableCell>
+        <TableCell>代价</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>1. 停用更新</TableCell>
+        <TableCell>在 `PCL/Setup.ini` 调整更新相关开关，或用脚本禁用更新与公告</TableCell>
+        <TableCell>停止获得修复；公告相关风险不会自动消失</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>2. 保留旧版</TableCell>
+        <TableCell>备份仍带下载功能的旧版本体，离线使用</TableCell>
+        <TableCell>需要自行保管文件；来源不明的副本同样有风险</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>3. 第三方补丁</TableCell>
+        <TableCell>用 IL patch 之类的方式恢复下载入口</TableCell>
+        <TableCell>修改后的程序不再等同原版；需要自审代码与校验哈希</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>4. 换启动器</TableCell>
+        <TableCell>改用其它开源或社区维护的启动器</TableCell>
+        <TableCell>迁移实例、账号重新登录；不同启动器的生态支持不一</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>5. 官方启动器迁回</TableCell>
+        <TableCell>用官方启动器下载版本，再把实例目录挂回 PCL</TableCell>
+        <TableCell>额外步骤较多；对整合包支持有限</TableCell>
+      </TableRow>
+    </Table>
+  </Section>
+
+  <Section title="当时被反复转发的公开仓库">
+    <List type="unordered">
+      <ListItem>
+        `Ryorin1337/pcl-patcher`（C#）——用 dnlib 做 IL patch，解开「限制 MC 下载」相关逻辑。
+        群内在 10-20 16:47 与 17:27 两次转发，Star 数从 7 涨到 15。
+      </ListItem>
+      <ListItem>
+        `1244026418/PCL-Download-Fix`（C#）——离线恢复指定 PCL 2.99.0.0 正式版的下载入口，
+        中文界面、保留原文件。
+      </ListItem>
+    </List>
+    <Paragraph>
+      两个仓库都是**第三方**作品，与 PCL 官方无关。判断是否使用，至少要看：
+      发布者身份、提交历史、是否附带可复现的构建说明、产物哈希是否与 release 一致。
+    </Paragraph>
+  </Section>
+
+  <Section title="为什么「改版」风险最大">
+    <List type="unordered">
+      <ListItem>**分发环节不可控**：改版通常通过网盘、群文件传播，没有签名也没有校验。</ListItem>
+      <ListItem>**恰好命中最需要的时刻**：用户急着恢复下载功能，最容易被「一键恢复」吸引。</ListItem>
+      <ListItem>**启动器天然持有敏感信息**：账号令牌、实例目录、Java 路径；一旦被植入后门代价很高。</ListItem>
+    </List>
+    <Paragraph>
+      群管理组的提醒原文（10-20 19:18，转自 `Elowen Public`）明确写到：
+      发现有人把 PCL 重新打包并植入盗号木马与后门程序。
+      这段提醒与后续的争议视频无关，是**独立的安全事件**，值得单独记住。
+    </Paragraph>
+  </Section>
+
+  <Section title="给普通用户的稳妥做法">
+    <List type="ordered">
+      <ListItem>**先确认现状**：打开启动器看下载页是否可用，不要凭传言直接删文件。</ListItem>
+      <ListItem>**备份实例与配置**：`PCL` 目录、版本目录、整合包，先复制一份再折腾。</ListItem>
+      <ListItem>**只从可核验渠道获取**：官方仓库、原作者发布页；对网盘/群文件保持怀疑。</ListItem>
+      <ListItem>**能校验就校验**：记录 SHA-256，比对官方发布信息。</ListItem>
+      <ListItem>**不要在启动器里保存长期凭证**：能免登就免登，减少被利用的损失面。</ListItem>
+    </List>
+  </Section>
+
+  <SeeAlso>
+    <Link slug="timeline" title="时间线：2026 年 10 月 20 日前后" />
+    <Link slug="misreadings" title="常见误读与谣言清单" />
+    <Link slug="announce-actions" title="公告系统与远程动作：技术分析" />
+  </SeeAlso>
+
+  <References>
+    <Ref id="1">本机 QQ 群聊存档，2026-10-20 16:00 ~ 19:30 段（含仓库转发与管理组提醒）。</Ref>
+    <Ref id="2">`Ryorin1337/pcl-patcher`、`1244026418/PCL-Download-Fix` 公开仓库描述。</Ref>
+  </References>
+</Article>

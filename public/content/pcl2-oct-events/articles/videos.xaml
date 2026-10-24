@@ -1,0 +1,181 @@
+<Article
+  xmlns="https://pcl2.n0th1n3ssd0ma1n.top/schema/1"
+  xmlns:md="https://pcl2.n0th1n3ssd0ma1n.top/markdown/1"
+  title="争议视频归档：后门演示与「云控」分析"
+  slug="videos"
+  lang="zh-CN"
+  tags="十月事件,争议,视频,证据,存档"
+  updated="2026-10-24"
+  summary="事件中传播最广的两段视频的原件归档与转录：一段演示借公告下发实现远程命令执行，一段分析 PCL 2.99.0 的公告动作能力。含作者自设的结论边界、可复核的技术链条，以及关于投诉与网络暴力的说明。">
+
+  <Infobox>
+    <Infobox.Field label="素材">2 段原始视频 + 2 份转录稿</Infobox.Field>
+    <Infobox.Field label="时长">0:59 与 3:56</Infobox.Field>
+    <Infobox.Field label="规格">852×480 / H.264 + AAC</Infobox.Field>
+    <Infobox.Field label="来源">Owner 提供原件，视频作者见正文</Infobox.Field>
+    <Infobox.Field label="编号">v1 – v2</Infobox.Field>
+  </Infobox>
+
+  <Note type="warning">
+    <Paragraph>
+      本页为**原样归档**：视频内容是发布者的演示与分析，其中对动机、责任方的判断属于**发布者主张**，
+      本站不代其作事实认定。可复核的技术事实、以及这段材料**不能**推出的结论，都在下方分开写清楚。
+      另外，无论观点如何，**反对任何针对个人的人肉、人身攻击与围攻**。
+    </Paragraph>
+  </Note>
+
+  <Section title="两段视频是什么">
+    <Table>
+      <TableRow header="true">
+        <TableCell>编号</TableCell>
+        <TableCell>标题</TableCell>
+        <TableCell>内容</TableCell>
+        <TableCell>作者自设边界</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>v1</TableCell>
+        <TableCell>公告下发 → 远程命令执行演示</TableCell>
+        <TableCell>在虚拟机里劫持公告源，触发启动器内置动作，落地并上线受控端，演示屏幕监控</TableCell>
+        <TableCell>演示者未主张已在真实用户环境发生</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>v2</TableCell>
+        <TableCell>PCL 2.99.0 公告能力分析</TableCell>
+        <TableCell>反编译二进制，梳理公告可执行的动作，以及设置写入到命令执行的调用链</TableCell>
+        <TableCell>明确声明证据支持「存在远程控制能力与权限边界问题」，**不支持**「开发者已经恶意使用、已经盗号或任意互联网用户均可入侵」</TableCell>
+      </TableRow>
+    </Table>
+  </Section>
+
+  <Section title="视频一：公告下发到远程命令执行（0:59）">
+    <Media src="./archive/videos/video1-pcl-demo.mp4" type="video" caption="v1：PCL 后门展示 / 远程命令执行演示（原样归档，58.98 秒）。" />
+
+    <Paragraph>
+      视频里的操作顺序是：虚拟机中打开启动器 → 禁用更新 → 用 PowerShell 脚本改 hosts
+      把公告域名指向本地模拟服务 → 重启启动器拉取「公告」 → 输入用户名启动游戏 →
+      游戏启动过程中执行远程命令 → 切到 C2 面板刷新，看到主机上线并开启屏幕监控。
+    </Paragraph>
+
+    <List type="unordered">
+      <ListItem>**攻击链的入口是公告源**：演示者自己把公告推送到模拟服务器，模拟的是「公告源被控制」这一前提。</ListItem>
+      <ListItem>**触发点发生在正常启动流程里**：用户侧看不到额外确认，演示中的进度条仍然正常。</ListItem>
+      <ListItem>**C2 能力覆盖屏幕监控、命令下发与文件操作**，上线后可以直接看到被控机桌面。</ListItem>
+    </List>
+
+    <Note type="important">
+      <Paragraph>
+        这段视频证明的是**能力**：在公告源可控的前提下，公告动作足以走到命令执行。它本身
+        **不等于**「存在已发生的攻击」「启动器作者已经这么干了」，也不等于任意第三方可以远程入侵。
+        判断真实风险时，应当以对应版本的二进制复核、以及是否有实际下发记录为准。
+      </Paragraph>
+    </Note>
+  </Section>
+
+  <Section title="视频二：PCL 2.99.0 的公告动作能力（3:56）">
+    <Media src="./archive/videos/video2-cloud-control-analysis.mp4" type="video" caption="v2：PCL 2.99.0.0 云控分析（原样归档，235.78 秒）。" />
+
+    <Paragraph>
+      视频分析了 **PCL 2.99.0.0** 的二进制，指出云控公告处理器不只是显示通知，还具备执行动作的能力。
+      作者给出的动作清单如下：
+    </Paragraph>
+
+    <List type="unordered">
+      <ListItem>**结束启动器**：`stop` → `EndProgram(SendWarning: false)`，可以让启动器退出（不是关机，也不等于强制结束已运行的游戏）。</ListItem>
+      <ListItem>**写设置**：`setup` → `Settings.Set`，可以写入已注册且类型兼容的设置项；其中命令类设置会引出下一节那条执行链。</ListItem>
+      <ListItem>**触发更新**：`update` / `clientupdate` → `UpdateStart`。</ListItem>
+      <ListItem>**复制文本**：`copy` → `ClipboardSet`。</ListItem>
+      <ListItem>**打开链接**：`website` → `OpenWebsite`，经过既有网址前缀检查。</ListItem>
+      <ListItem>**条件分发**：`uniqueaddress` 与版本、启动次数、随机比例、主题、部分设置等条件，可以只对符合条件的客户端生效。</ListItem>
+    </List>
+
+    <Paragraph>
+      **不需要弹窗确认**这一点值得单独说明：公告在 `buttons` 数量大于零时才弹对话框，
+      没有按钮时就直接用公告自带的 `actions` 进入动作循环。也就是说，公告弹窗并不是所有远程动作的必经步骤。
+      作者也补充，其他动作仍可能有可见现象，例如打开网站会显示浏览器、更新本身带提示。
+    </Paragraph>
+  </Section>
+
+  <Section title="可复核的技术链条">
+    <Paragraph>
+      视频里最关键的一条链，是「公告写设置」到「启动游戏时执行命令」的组合：
+    </Paragraph>
+
+    <CodeBlock language="text" title="视频描述的调用链">
+公告 actions.setup
+  → Settings.Set(LaunchAdvanceRun = 命令内容)
+  → 用户正常启动游戏
+  → 到达自定义命令阶段
+  → cmd.exe /c &lt;命令内容&gt;
+    </CodeBlock>
+
+    <Paragraph>
+      `LaunchAdvanceRun` 只是**已注册设置之一**，这也说明风险面来自「公告可写设置」这个通用能力，
+      而不仅是某一个字段。
+    </Paragraph>
+
+    <Paragraph>
+      视频还提到「关闭所有公告」这个偏好挡不住全部公告动作：界面保存的值是 2，
+      而判定逻辑是用用户值与服务端给出的重要等级比较（形如「2 大于 2」为假），
+      缺省重要等级同样是 2，所以该项不能当作无条件的关闭开关。
+    </Paragraph>
+
+    <Paragraph>
+      此外，正式版注册的 `SystemSystemTelemetry` 默认值为 `true`，`ModMain.Telemetry`
+      会向腾讯云日志服务的 `track` 端点发送事件；公开源码里的 `ModSecret.vb`
+      注明删除了部分安全相关代码，`ServerLoader` 也被简化。作者据此认为发行版包含
+      公开源码里看不到的完整公告处理逻辑。
+    </Paragraph>
+
+    <Note type="note">
+      <Paragraph>
+        需要分清「有遥测」「有远程动作能力」与「已经盗号、上传文件、窃取账号」之间的差距：
+        前者可以由代码与配置复核，后者需要额外的证据。上面的表述严格停留在可复核的部分。
+      </Paragraph>
+    </Note>
+  </Section>
+
+  <Section title="争议：投诉、网络暴力与「捂嘴」说法">
+    <Paragraph>
+      视频传播后，围绕作者与相关方的争议随之出现。据 Owner 与相关人士转述：
+      v1 作者 **小坤鸽** 在视频发布后遭到网友的网络暴力与人身攻击；
+      同时据称 **瓜皮龙**（PCL2 所属主体，`龙腾猫跃` 即法人尹海航）方面提出了投诉。
+      有相关人士认为这可能是「捂嘴霸凌」，但这个判断**尚未被独立核实**，本站无法确认真伪，
+      只能记录「存在这样的说法」。
+    </Paragraph>
+
+    <List type="unordered">
+      <ListItem>**对个人的围攻不可接受**：无论技术结论是否成立，人肉、辱骂、骚扰都不是讨论方式。</ListItem>
+      <ListItem>**投诉与维权本身是正当权利**：提出侵权投诉、要求更正，与「压制批评」需要分别看待，关键看是否有事实依据、是否针对批评本身。</ListItem>
+      <ListItem>**建议理性看待**：把「代码里有什么能力」「有没有被真实利用」「作者与相关方之间发生了什么」三件事分开讨论，避免把未经证实的指控当成结论传播。</ListItem>
+    </List>
+
+    <Note type="important">
+      <Paragraph>
+        本节记录的是**说法与时间线**，不是对人、对组织的定性。若当事方提供新的说明或证据，
+        本站会按同样的标准更新。
+      </Paragraph>
+    </Note>
+  </Section>
+
+  <Section title="原件与转录">
+    <Media src="./archive/videos/video1-transcript.md" type="file" caption="v1 转录稿（Markdown）" />
+    <Media src="./archive/videos/video2-transcript.md" type="file" caption="v2 转录稿与要点整理（Markdown）" />
+    <Paragraph>
+      归档校验（SHA-256 前 16 位）：v1 `d4abc553fde2c0e5`，v2 `6cb48e38f2084538`。
+      完整哈希与字节数记录在本内容包的 `manifest.json` 中。
+    </Paragraph>
+  </Section>
+
+  <SeeAlso>
+    <Link slug="origins" title="起因：家长举报与渠道服关闭" />
+    <Link slug="evidence" title="证据存档预览" />
+    <Link slug="ideology-of-pcl" title="PCL 2 的意识形态（cubk 存档）" />
+  </SeeAlso>
+
+  <References>
+    <Ref id="1">视频 v1 原件与转录稿，Owner 提供（文件 video1.mp4 / video1.txt）。</Ref>
+    <Ref id="2">视频 v2 原件与转录稿，Owner 提供（文件 video2.mp4 / video2.txt）。</Ref>
+    <Ref id="3">Owner 补充说明：v1 作者小坤鸽遭到网络暴力与人身攻击，相关方提出投诉，据相关人士称可能为「捂嘴霸凌」，建议理性看待。</Ref>
+    <Ref id="4">v2 作者在视频中的自我限定：证据支持远程控制能力与权限边界问题，尚不支持已恶意使用、已盗号或任意互联网用户均可入侵。</Ref>
+  </References>
+</Article>
