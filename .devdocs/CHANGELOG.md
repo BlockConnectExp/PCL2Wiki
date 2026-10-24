@@ -92,6 +92,26 @@ version: v26.0-Alpha 1
 
 ---
 
+## 2026.10.24-17:00: OriginsPage
+
+ChangedFiles:
+```
+.\public\content\pcl2-oct-events\** +20 -0
+.\tools\build-cubk-snapshot.mjs +13 -0
+```
+
+ChangeLog:
+Num|File Name|Change Description|Change Time|Changer
+----|----|----|----|----
+1|origins.xaml|起因页：起因链、证据、误读、时间线|2026.10.24-17:00:00|AI (PCL2Wiki)
+2|assets/evidence/origins|8 张群聊与应用商店证据图|2026.10.24-17:00:00|AI (PCL2Wiki)
+3|archive/chat|文字转录与原始群聊 zip|2026.10.24-17:00:00|AI (PCL2Wiki)
+4|build-cubk-snapshot.mjs|manifest 收录起因页|2026.10.24-17:00:00|AI (PCL2Wiki)
+
+version: v26.0-Alpha 1
+
+---
+
 License: TBD
 
 GitHub@BlockConnectExp | BlockConnectLab@StarsailsClover

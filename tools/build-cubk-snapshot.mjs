@@ -110,6 +110,15 @@ const manifest = {
       updated: '2026-10-24',
       summary: 'cubk 于 2026-10-21 发布的事件评论《PCL 2的意识形态》全文存档与导读。',
     },
+    {
+      slug: 'origins',
+      title: '起因：家长举报与渠道服关闭',
+      source: 'articles/origins.xaml',
+      tags: ['十月事件', '起因', '证据'],
+      updated: '2026-10-24',
+      summary:
+        '根据天养群聊记录整理的十月事件起因链，并区分“家长举报 PCL”与“网易关闭渠道服”两条独立因果。',
+    },
   ],
   assets,
   generator: 'pcl2wiki-archive/0.1.0',

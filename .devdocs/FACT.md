@@ -147,6 +147,43 @@ version: v26.0-Alpha 1
 
 ---
 
+## 2026.10.24-17:00: OriginsPage 005
+
+Files:
+```
+.\public\content\pcl2-oct-events\articles\origins.xaml +1 -0
+.\public\content\pcl2-oct-events\assets\evidence\origins\** +8 -0
+.\public\content\pcl2-oct-events\archive\chat\** +2 -0
+.\tools\build-cubk-snapshot.mjs +13 -0
+.\public\content\pcl2-oct-events\articles\ideology-of-pcl.xaml +4 -0
+```
+
+### What's Happened?
+
+- 发布起因页《起因：家长举报与渠道服关闭》（slug `origins`），内容包现有 2 篇文稿。
+- 证据来源：Owner 提供的天养群聊 8 张截图 + 文字转录 + 原始素材 zip。
+- 关键原话（管理员）："是有个 MC 服务器有未成年充钱然后被举报了，然后顺便把 PCL 就一起举报了"；"后面还要看脸会不会处罚 PCL"。
+- 明确区分两条独立因果：PCL/HMCL 下载停用来自连带举报；《我的世界》中国版部分应用商店不可下载来自网易关闭渠道服。
+- cubk 存档帖新增 SeeAlso 指向起因页。
+
+### Any evidence?
+
+```
+npm run content:index  # 1 个内容包，2 篇文稿
+npm run lint / typecheck / test / build  # pass
+IAB screenshot: local /#/wiki/origins 完整渲染
+```
+
+### FACTs
+
+1. 起因原话来自 [PCL] 龙腾猫跃（管理员）的群内说明，截图已归档。
+2. 应用商店截图（小米 / vivo）只证明"当时不可下载"，不能证明下架原因；原因是 Owner 补充的渠道服关闭。
+3. 群内"网易也死了 / 应该是家长的大手"是当时推测，已作为误读点单独标注。
+
+version: v26.0-Alpha 1
+
+---
+
 License: TBD
 
 GitHub@BlockConnectExp | BlockConnectLab@StarsailsClover

@@ -18,9 +18,69 @@
       ],
       "updated": "2026-10-24",
       "summary": "cubk 于 2026-10-21 发布的事件评论《PCL 2的意识形态》全文存档与导读。"
+    },
+    {
+      "slug": "origins",
+      "title": "起因：家长举报与渠道服关闭",
+      "source": "articles/origins.xaml",
+      "tags": [
+        "十月事件",
+        "起因",
+        "证据"
+      ],
+      "updated": "2026-10-24",
+      "summary": "根据天养群聊记录整理的十月事件起因链，并区分“家长举报 PCL”与“网易关闭渠道服”两条独立因果。"
     }
   ],
   "assets": [
+    {
+      "path": "assets/evidence/origins/01-group-1544.png",
+      "sha256": "b8d6ecc0003d88e193d04b2ee6292ad1e3b2c546664339012b549020214d077b",
+      "bytes": 116896,
+      "mime": "image/png"
+    },
+    {
+      "path": "assets/evidence/origins/02-official-bilibili.jpg",
+      "sha256": "8d62452af026650e0709cef845fbcecf7ff4bcfe49c0991e59c16c616ebcbb0e",
+      "bytes": 89133,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "assets/evidence/origins/03-admin-cause.jpg",
+      "sha256": "48867f6f6fb0be365d29ce8da1c3caf98648a05b9348e92edb7a524251465ea4",
+      "bytes": 177475,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "assets/evidence/origins/04-admin-cause-crop.png",
+      "sha256": "3dff11ed04e8ff2d327a9d494775cc5199e91b5409c1da1151bde7a908365e07",
+      "bytes": 30910,
+      "mime": "image/png"
+    },
+    {
+      "path": "assets/evidence/origins/05-appstore-xiaomi.png",
+      "sha256": "494806865e56b74d68d1a99bffbb4d3bb7564b18e7bd4bf2621d41ac905a3195",
+      "bytes": 207593,
+      "mime": "image/png"
+    },
+    {
+      "path": "assets/evidence/origins/06-group-forward.png",
+      "sha256": "493a510b94b2a7a29642eeee713cad0f9c586c5a8fc5a7075bf0177120ea63b6",
+      "bytes": 91043,
+      "mime": "image/png"
+    },
+    {
+      "path": "assets/evidence/origins/07-appstore-vivo.jpg",
+      "sha256": "da65f288bafe7c860c63e0583a5da19a3bbac0bc82736552078d11705ab21803",
+      "bytes": 249448,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "assets/evidence/origins/08-group-reaction.png",
+      "sha256": "8144e327d1cf023bb03ea2aaf399d856d47643df69c3a78fd4901e6b6a2664ac",
+      "bytes": 33394,
+      "mime": "image/png"
+    },
     {
       "path": "assets/ideology-of-pcl/1.webp",
       "sha256": "772eb0313a288254816ffa39f8c7259c3b0c3898206b60ab2d7fd7a3461ec2b3",
@@ -94,6 +154,18 @@
       "mime": "image/webp"
     },
     {
+      "path": "archive/chat/tianyang-2026-10-20-transcript.md",
+      "sha256": "335198663cb3b1ddf6404af46b2ffaeb6dcbb1adb9ba7c2c39020fc3d54100d7",
+      "bytes": 1726,
+      "mime": "text/markdown"
+    },
+    {
+      "path": "archive/chat/tianyang-2026-10-20.zip",
+      "sha256": "dc07d0e3e8e253bee4981fa75dabc05cea3c99eba828815fbb9942b372433586",
+      "bytes": 893342,
+      "mime": "application/zip"
+    },
+    {
       "path": "archive/cubk/ideology-of-pcl/article-fragment.html",
       "sha256": "3d9208d2687b9af0bded1fcc92bfb3c0f73d042f2fd4c0a2eb8c6fd7d081a4a0",
       "bytes": 21619,
@@ -137,5 +209,5 @@
     }
   ],
   "generator": "pcl2wiki-archive/0.1.0",
-  "createdAt": "2026-10-24T06:00:34.043Z"
+  "createdAt": "2026-10-24T08:46:16.318Z"
 }
