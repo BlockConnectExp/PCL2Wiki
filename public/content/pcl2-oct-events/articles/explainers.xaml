@@ -10,7 +10,7 @@
 
   <Infobox>
     <Infobox.Field label="素材">5 段视频（合计约 56 MB）+ 5 份转录稿</Infobox.Field>
-    <Infobox.Field label="时长">6:13 / 1:51 / 6:19 / 5:21 / 4:47</Infobox.Field>
+    <Infobox.Field label="时长">8:25 / 1:51 / 7:58 / 5:21 / 6:42</Infobox.Field>
     <Infobox.Field label="来源">整理者提供原件</Infobox.Field>
     <Infobox.Field label="编号">x1 – x5</Infobox.Field>
   </Infobox>
@@ -23,7 +23,7 @@
     </Paragraph>
   </Note>
 
-  <Section title="x1 事件当天复盘（6:13）">
+  <Section title="x1 事件当天复盘（8:25）">
     <Media src="./archive/videos/video3-day-one-recap.mp4" type="video" caption="x1：10 月 20 日当天的时间线复盘与替代方案整理。" />
     <List type="unordered">
       <ListItem>**时间线**：15:01 发布 2.99.0.0（更新日志两行）；随后 B 站/贴吧/QQ 群在 20 分钟内出现十几条「悲报」视频；16:00–17:00 有玩家发现中国版在部分安卓应用商店搜不到本体（官网与 TapTap 仍可访问）。</ListItem>
@@ -42,7 +42,7 @@
     </Paragraph>
   </Section>
 
-  <Section title="x3 线索调查（6:19）">
+  <Section title="x3 线索调查（7:58）">
     <Media src="./archive/videos/video5-investigation-trace.mp4" type="video" caption="x3：把「后门」指控、账号关联与 2025 年联机节点争议串起来的调查向视频。" />
     <Paragraph>
       视频从 10 月 23 日的一篇长文与一张群聊截图切入，串起了几条线：谁最早提出「后门」说法、
@@ -67,7 +67,7 @@
     </Paragraph>
   </Section>
 
-  <Section title="x5 法条与实现差异（4:47）">
+  <Section title="x5 法条与实现差异（6:42）">
     <Media src="./archive/videos/video7-legal-analysis.mp4" type="video" caption="x5：从《网络出版服务管理规定》与三家启动器的源码实现，解释「为什么是同一天」。" />
     <Paragraph>
       这段视频是目前公开材料里**最能解释「集体停手」**的一段：它把法条、版本跳号、
