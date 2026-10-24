@@ -113,6 +113,40 @@ version: v26.0-Alpha 1
 
 ---
 
+## 2026.10.24-14:10: CubkArchive 004
+
+Files:
+```
+.\public\content\pcl2-oct-events\** +30 -0
+.\tools\build-cubk-snapshot.mjs +1 -0
+.\src\core\markdown.ts +12 -2
+.\src\render\InlineNodes.tsx +5 -1
+```
+
+### What's Happened?
+
+- 新增内容包 `pcl2-oct-events`，发布第一篇独立存档帖《PCL 2 的意识形态（cubk 存档）》。
+- 存档物：全文转录（md:Block）、12 张原文配图、自包含 snapshot.html、article.md、渲染后 DOM、首屏/页尾截图、original-response.html 与 zip 打包。
+- Markdown 独立成段的图片现在渲染为图片块；正文相对链接按内容包资源解析。
+- 桌面《PCL2 Oct Events》聊天素材已盘点（9 图 + messages.txt），按 Owner 要求暂不发布，待补充整理。
+
+### Any evidence?
+
+```
+npm run content:index  # 1 个内容包，1 篇文稿
+npm run lint / typecheck / test / build  # pass
+IAB screenshots: /wiki/ideology-of-pcl 渲染、图片、快照下载区
+```
+
+### FACTs
+
+1. cubk 页面为 Angular SPA，curl 仅得外壳；快照通过 IAB 渲染后抽取 DOM 生成。
+2. `tools/build-cubk-snapshot.mjs` 可在重新抓取后重建 snapshot.html 与 manifest 哈希。
+
+version: v26.0-Alpha 1
+
+---
+
 License: TBD
 
 GitHub@BlockConnectExp | BlockConnectLab@StarsailsClover

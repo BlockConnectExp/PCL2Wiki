@@ -1,0 +1,141 @@
+{
+  "spec": "pcl2wiki-package/1",
+  "id": "pcl2-oct-events",
+  "title": "PCL2 十月事件",
+  "version": "0.1.0",
+  "language": "zh-CN",
+  "entry": "articles/ideology-of-pcl.xaml",
+  "description": "PCL2 十月事件（下载功能关闭风波）的事件记录、存档与社区反应。",
+  "articles": [
+    {
+      "slug": "ideology-of-pcl",
+      "title": "PCL 2 的意识形态（cubk 存档）",
+      "source": "articles/ideology-of-pcl.xaml",
+      "tags": [
+        "十月事件",
+        "存档",
+        "第三方观点"
+      ],
+      "updated": "2026-10-24",
+      "summary": "cubk 于 2026-10-21 发布的事件评论《PCL 2的意识形态》全文存档与导读。"
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/ideology-of-pcl/1.webp",
+      "sha256": "772eb0313a288254816ffa39f8c7259c3b0c3898206b60ab2d7fd7a3461ec2b3",
+      "bytes": 5404,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/ideology-of-pcl/10.webp",
+      "sha256": "555060fdeca8b1d9212cdcabaca18075632ee685ad4cfaff331f6e555120d212",
+      "bytes": 23252,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/ideology-of-pcl/11.png",
+      "sha256": "8a054d5cd4242cf87d0ef027b0c2feb58d13eead7344155e5d12cdf97f9b6520",
+      "bytes": 32135,
+      "mime": "image/png"
+    },
+    {
+      "path": "assets/ideology-of-pcl/12.webp",
+      "sha256": "2876590cf9ad5b7c248fe3689d21a1f2619ad52e35b64c89dd34e2b264f1a2f9",
+      "bytes": 31844,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/ideology-of-pcl/2.webp",
+      "sha256": "668712094d520890347f56257d2a5e37187e105cf5088eaa0e6b870b71de0ec4",
+      "bytes": 6054,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/ideology-of-pcl/3.png",
+      "sha256": "c7db532b46398ca4a426eef0db2c7ed7275d6258c5164ab17cf27c8bf15c1979",
+      "bytes": 27286,
+      "mime": "image/png"
+    },
+    {
+      "path": "assets/ideology-of-pcl/4.webp",
+      "sha256": "cff871777be0257802a8e7f58762ffbaa8079f83a707234347f9a9ca7b6cde67",
+      "bytes": 54698,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/ideology-of-pcl/5.webp",
+      "sha256": "3c236a33dad550fb8c1c05d8783b99506eb07d42d5a963e7724b13ec7cb5099f",
+      "bytes": 30790,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/ideology-of-pcl/6.webp",
+      "sha256": "9e4864de0d8c0bbd790aa9d1d489ffdb00d1156cdfa44305aab412c16eed04ca",
+      "bytes": 67932,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/ideology-of-pcl/7.webp",
+      "sha256": "65fe19291fcff84dede18a823bff83863abedfde3f16008cd4f5085bc2660f9c",
+      "bytes": 35396,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/ideology-of-pcl/8.webp",
+      "sha256": "a67b8b10eb0534bcecb8b1755f0db711f5ecbd99ac8468437c50394e5af0fb78",
+      "bytes": 122124,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/ideology-of-pcl/9.webp",
+      "sha256": "d9d5adba9c6cdfe9cc5c657a7f7e78d241e635684a45342871a732f911d457b0",
+      "bytes": 36796,
+      "mime": "image/webp"
+    },
+    {
+      "path": "archive/cubk/ideology-of-pcl/article-fragment.html",
+      "sha256": "3d9208d2687b9af0bded1fcc92bfb3c0f73d042f2fd4c0a2eb8c6fd7d081a4a0",
+      "bytes": 21619,
+      "mime": "text/html"
+    },
+    {
+      "path": "archive/cubk/ideology-of-pcl/article.md",
+      "sha256": "453d23d435d3aaf82a2fba78fcabc7293071f29f601718188c8fbe72b8dbdae9",
+      "bytes": 10319,
+      "mime": "text/markdown"
+    },
+    {
+      "path": "archive/cubk/ideology-of-pcl/original-response.html",
+      "sha256": "54e72b50eb67017d50271fd377865b506fb84b539794223700add69699a40b0c",
+      "bytes": 166678,
+      "mime": "text/html"
+    },
+    {
+      "path": "archive/cubk/ideology-of-pcl/page-bottom.png",
+      "sha256": "5669260e655dff11b3a2eeb3a9103deaf0eb957eee8fb6d04c9c4d8a9fe6ec32",
+      "bytes": 119274,
+      "mime": "image/png"
+    },
+    {
+      "path": "archive/cubk/ideology-of-pcl/page-top.png",
+      "sha256": "47e52805b8c5a44315cf17a759884ded24e0f88d60f300b542657190bda40d00",
+      "bytes": 101348,
+      "mime": "image/png"
+    },
+    {
+      "path": "archive/cubk/ideology-of-pcl/snapshot.html",
+      "sha256": "b26b38590af1efcaea5e575fbf5e8e1320a7e26c5fe2a2b494f3068ae29a3bd0",
+      "bytes": 22404,
+      "mime": "text/html"
+    },
+    {
+      "path": "archive/cubk-ideology-of-pcl-snapshot.zip",
+      "sha256": "a1991f2676f636842e799b3b974b19c4ed319c42a8952432cb4efde319a3db63",
+      "bytes": 253719,
+      "mime": "application/zip"
+    }
+  ],
+  "generator": "pcl2wiki-archive/0.1.0",
+  "createdAt": "2026-10-24T06:00:34.043Z"
+}

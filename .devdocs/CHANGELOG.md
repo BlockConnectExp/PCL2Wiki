@@ -70,6 +70,28 @@ version: v26.0-Alpha 1
 
 ---
 
+## 2026.10.24-14:10: CubkArchive
+
+ChangedFiles:
+```
+.\public\content\pcl2-oct-events\** +30 -0
+.\tools\build-cubk-snapshot.mjs +1 -0
+.\src\core\markdown.ts +12 -2
+.\src\render\InlineNodes.tsx +5 -1
+```
+
+ChangeLog:
+Num|File Name|Change Description|Change Time|Changer
+----|----|----|----|----
+1|content/pcl2-oct-events|新增十月事件内容包与 cubk 存档帖|2026.10.24-14:10:00|AI (PCL2Wiki)
+2|tools/build-cubk-snapshot.mjs|快照重建与 manifest 哈希工具|2026.10.24-14:10:00|AI (PCL2Wiki)
+3|markdown.ts|Markdown 独立图片渲染为图片块|2026.10.24-14:10:00|AI (PCL2Wiki)
+4|InlineNodes.tsx|正文相对链接按资源解析|2026.10.24-14:10:00|AI (PCL2Wiki)
+
+version: v26.0-Alpha 1
+
+---
+
 License: TBD
 
 GitHub@BlockConnectExp | BlockConnectLab@StarsailsClover

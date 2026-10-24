@@ -34,9 +34,12 @@ function renderNode(node: InlineNode, key: number, context: RenderContext): Reac
     case 'code':
       return <code key={key}>{node.value}</code>;
     case 'link': {
+      const isSpecial = /^(https?:|mailto:|data:|#)/i.test(node.href) || node.href === '';
       const href = node.target
         ? wikiHref(node.target.slug, node.target.anchor, context.slug)
-        : node.href;
+        : isSpecial
+          ? node.href
+          : context.resolveAsset(node.href);
       const external = /^https?:/i.test(href);
       return (
         <a

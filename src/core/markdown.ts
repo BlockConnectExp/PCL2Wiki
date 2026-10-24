@@ -203,7 +203,20 @@ function mapBlockTokens(
         if (mathBlock) {
           blocks.push({ type: 'math', value: mathBlock[1].trim(), display: true });
         } else {
-          blocks.push({ type: 'paragraph', children: parseInlineMarkdown(token.text ?? '') });
+          const children = parseInlineMarkdown(token.text ?? '');
+          const onlyImage = children.length === 1 && children[0]?.type === 'image';
+          if (onlyImage) {
+            const image = children[0] as Extract<InlineNode, { type: 'image' }>;
+            blocks.push({
+              type: 'media',
+              kind: 'image',
+              src: image.src,
+              alt: image.alt || undefined,
+              caption: image.title || undefined,
+            });
+          } else {
+            blocks.push({ type: 'paragraph', children });
+          }
         }
         break;
       }

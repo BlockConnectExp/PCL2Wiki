@@ -1,0 +1,157 @@
+<Article
+  xmlns="https://pcl2.n0th1n3ssd0ma1n.top/schema/1"
+  xmlns:md="https://pcl2.n0th1n3ssd0ma1n.top/markdown/1"
+  title="PCL 2 的意识形态（cubk 存档）"
+  slug="ideology-of-pcl"
+  lang="zh-CN"
+  tags="十月事件,存档,第三方观点"
+  updated="2026-10-24"
+  summary="cubk 于 2026-10-21 发布的事件评论《PCL 2的意识形态》全文存档与导读。">
+
+  <Infobox>
+    <Infobox.Field label="原文">cubk.cn / ideology-of-pcl</Infobox.Field>
+    <Infobox.Field label="作者">cubk</Infobox.Field>
+    <Infobox.Field label="发布时间">2026-10-21</Infobox.Field>
+    <Infobox.Field label="存档时间">2026-10-24</Infobox.Field>
+    <Infobox.Field label="存档状态">全文 + 12 张配图 + 页面快照</Infobox.Field>
+  </Infobox>
+
+  <Note type="warning">
+    <Paragraph>
+      本文是 **第三方观点存档**，仅用于事件研究与记录，内容包含强烈的讽刺与主观评价，
+      **不代表本站立场**。原文作者声明文章仍在持续更新，本页保存的是 2026-10-24 抓取时的状态。
+    </Paragraph>
+  </Note>
+
+  <Section title="为什么收录这篇">
+    <Paragraph>
+      事发当天社区信息高度碎片化，cubk 的这篇《PCL 2的意识形态》用一条完整叙事把
+      **PCL 授权争议、10 月 20 日下载功能关闭、官方表态方式、HMCL 跟进限制、EasyTier 联机与静默更新机制**
+      串了起来，适合作为快速理解十月事件的起点。
+    </Paragraph>
+    <Paragraph>
+      本帖先作为 **独立存档帖** 收录原文全文与页面快照；事发当天的群聊截图等一手材料由 Owner
+      另行提供，将在此基础上继续整理为时间线与证据页。
+    </Paragraph>
+  </Section>
+
+  <Section title="事件时间点（据文中与社区信息）">
+    <List type="ordered">
+      <ListItem>**2026-10-20**：龙腾猫跃在哔哩哔哩发布动态（见 [参考文献 2](#ref-2)），内容仅一个[委屈]表情与“中国式家长很神奇吧”，未给出上下文。</ListItem>
+      <ListItem>**2026-10-20 前后**：PCL2 关闭《我的手艺》（Minecraft）客户端下载功能；作者转述官方解释为家长举报所致。</ListItem>
+      <ListItem>**2026-10-21**：cubk 发布本文，从授权与治理角度评论该事件。</ListItem>
+      <ListItem>**事件发酵期**：HMCL（Glavo）跟进加入针对中国大陆的下载检测；社区出现 pcl-patcher 解锁补丁、CE 社区版以及倒卖解锁服务等现象。</ListItem>
+    </List>
+  </Section>
+
+  <Section title="原文全文（存档转录）">
+    <md:Block><![CDATA[
+> 由于事情还在发酵，本文章大概会持续更新。
+
+![](assets/ideology-of-pcl/1.webp)
+
+很多人说PCL是一个共产主义软件，虽然给一个软件定义意识形态非常他妈的愚蠢，但是如果非要给他定个性的话，笔者认为PCL其实是一个[金日成金正日主义](https://zh.wikipedia.org/zh-hans/%E9%87%91%E6%97%A5%E6%88%90%E9%87%91%E6%AD%A3%E6%97%A5%E4%B8%BB%E7%BE%A9)软件。
+
+[朝鲜民主主义人民共和国](https://zh.wikipedia.org/wiki/%E6%9C%9D%E9%B2%9C%E6%B0%91%E4%B8%BB%E4%B8%BB%E4%B9%89%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD)把金日成金正日主义称为[主体思想](https://zh.wikipedia.org/wiki/%E4%B8%BB%E4%BD%93%E6%80%9D%E6%83%B3)的发展形态，自称仍然坚持社会主义和共产主义的最终目标。但是实际上这个理论和马克思主义和列宁主义相差甚远，只是挂着“共产主义”的头衔借壳上市，它更像一种[以民族主义和领袖崇拜为核心的意识形态](https://zh.wikipedia.org/zh-cn/%E6%B3%95%E8%A5%BF%E6%96%AF%E4%B8%BB%E4%B9%89)。
+
+很显然这个PCL发射台就是借壳上市的高手，开源程度近似于[Claude Code](https://github.com/anthropics/claude-code)或者[Reqable](https://github.com/reqable/reqable-app)的Github仓库[1](#footnote-2)，然后很多PCL的粉丝就可以拿着“PCL是开源的”这个大棒到处打人了。
+
+很显然任何视力和智力正常的人类在观赏[Meloong-Git/PCL/LICENCE](https://github.com/Meloong-Git/PCL/blob/6b9a50df911c9d68b69b24c979efba477fb14b67/LICENCE)时候都能发现严肃的问题。
+
+这个迫真授权（由于PCL不是开源软件所以不应该叫开源协议而是叫授权[2](#footnote-1)）的中心是：龙腾猫跃。衍生品的名字必须以Plain Craft Launcher开头，关于页面首位必须是他的署名和赞助链接也就是你得给他在主页修个[万寿台大纪念碑](https://zh.wikipedia.org/wiki/%E8%90%AC%E5%A3%BD%E8%87%BA%E5%A4%A7%E7%B4%80%E5%BF%B5%E7%A2%91)，赞助劝导只许比他更激进，不许比他更克制。也就是你必须比他还司凤，你不能不比他司凤。
+
+当然，主题也不是共产主义的，主题是资本主义的，你需要付款才能获得。
+
+![](assets/ideology-of-pcl/3.png)
+
+笔者没有说龙腾猫跃是[金正日](https://zh.wikipedia.org/wiki/%E9%87%91%E6%AD%A3%E6%97%A5)，笔者说的是一个挂着开源招牌的项目实际运转逻辑是以一个人为中心，领袖是大脑，民众是躯体。就像朝鲜没有真正执行社会主义、马列主义、共产主义，而是执行主体思想一样。
+
+![](assets/ideology-of-pcl/4.webp)
+
+## 将军驾崩
+
+![](assets/ideology-of-pcl/2.webp)
+
+2026年10月20日，龙腾猫跃[大元帅](https://zh.wikipedia.org/wiki/%E6%9C%9D%E9%B2%9C%E5%85%83%E5%B8%85)在哔哩哔哩弹幕网发表了一个[委屈]表情[3](#footnote-3)，抛开这个表情的死娘程度在笔者心里仅次于[汤圆]和[给心心]不谈，相关上下文长度高达0，并且留下了中国式家长很神奇吧这个奇妙的留白，就像某种[开放式结局](https://zh.moegirl.org.cn/Open_End)一样留下悬念让哔哩哔哩弹幕网的用户去猜仿佛给上下文写出来能累死他的键盘，就像[金正日身亡了](https://zh.wikipedia.org/wiki/%E9%87%91%E6%AD%A3%E6%97%A5%E4%B9%8B%E6%AD%BB)两天朝鲜当局才公布此事一样。也许是他觉得网友中全都是[克里姆林宫学](https://zh.wikipedia.org/wiki/%E5%85%8B%E9%87%8C%E5%A7%86%E6%9E%97%E5%AD%A6)高手，能通过谁在阅兵时候站的距离列宁墓比较近推断出谁的权力比较大一样能通过一个神秘的哔哩哔哩黄豆表情推断出事情的原委。
+
+关注了这个[狗屁](https://www.bilibili.com/opus/1261020063318671366)事件的小伙伴都知道，后来龙腾猫跃在交流群里的解释是一个[熊孩子](https://booth.pm/ja/items/3639280)在[《我的手艺》](https://www.minecraft.net/zh-hans)伺服器里充值中国元导致[他的家长](https://zh.wikipedia.org/wiki/%E5%B1%8D%E9%AB%94)举报顺便给PCL也举报了，所以下架了PCL下载《我的手艺》[客户端](https://zh.wiktionary.org/wiki/client)的功能，但是很显然，99.9%的[中国大陆](https://zh.wikipedia.org/wiki/%E8%A7%A3%E6%94%BE%E5%8C%BA)地区《我的手艺》伺服器大概率是发布了一个包含所有文件甚至1.0 GiB以上的[雜湊資源檔案（assets）](https://zh.minecraft.wiki/w/%E6%95%A3%E5%88%97%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6?variant=zh-tw)的整合包给玩家所以你大概也不用下载任何文件就能游玩和充钱所以禁用下载《我的手艺》客户端本身起到的作用几乎为0所以无法解决任何问题，笔者建议龙腾猫跃大元帅再[静默更新](#%E7%BA%A2%E6%98%9Fos)一个版本直接禁用启动游戏功能这样才能真正解决问题。
+
+他在哔哩哔哩上的发言有点引人无限遐想，很显然给这一坨信息解释到哔哩哔哩弹幕网上也会要了他的老命。这个与[网易](https://mc.163.com/)[微软](https://www.microsoft.com/zh-cn)[麻将](https://en.wikipedia.org/wiki/Mojang_Studios)无关更是某种欲擒故纵或者此地无银三百两即使他不是刻意的，由于上下文不完整导致广大哔哩哔哩网友不得不鬼脑发力怀疑就像是[制造竹知了的视频被下架了](https://zh.wikipedia.org/wiki/%E8%8F%AF%E7%82%BA%E7%AB%B9%E7%9F%A5%E4%BA%86%E4%BA%8B%E4%BB%B6)作者会说绝对不是[华为](https://zh.wikipedia.org/wiki/%E9%B8%BF%E8%92%99%E6%99%BA%E8%A1%8C)或者[余承东](https://zh.wikipedia.org/wiki/%E4%BD%99%E6%89%BF%E4%B8%9C)干的一样其实就是网易微软麻将干的，而且由于他没有补充上下文的同时只关闭了下载《我的手艺》客户端渠道没有关掉其他任何功能让人更怀疑是[EULA的利益既得者](https://en.wikipedia.org/wiki/Mojang_Studios)干的，龙腾猫跃大元帅是否有此意还是表达能力堪比一个鳄鱼笔者暂时蒙古。
+
+在自媒体的炒作下很多人使用["咱妈"](https://en.wiktionary.org/wiki/%E5%92%B1%E5%AA%BD)指代中华人民共和国政府，这个"[中国式家长](https://zh.wikipedia.org/zh-hans/%E4%B8%AD%E5%9B%BD%E5%BC%8F%E5%AE%B6%E9%95%BF)"是否有引导网友认为是中华人民共和国政府封杀了《我的手艺》的意思笔者暂时蒙古，但是效果至少达到了，现在哔哩哔哩上有三万个以上键政弱智在使用[古风DJ](https://www.bilibili.com/video/BV1JsK5eyEuB/)配此事件来魔怔网易或者中华人民共和国政府。
+
+此事发生之后[蛤蟆册佬](https://github.com/HMCL-dev)的[皮套溜溜梅爱好者](https://github.com/Glavo)开发不小心点到一键跟跳了，发布了检测力度堪比[Anthropic PBC](https://www.anthropic.com/)的中国人检测禁止中国大陆用户使用蛤蟆册佬下载我的手艺客户端。
+
+![](assets/ideology-of-pcl/10.webp)
+
+![](assets/ideology-of-pcl/11.png)
+
+> 检测由 Anthropic PBC 友情赞助。
+
+## 领袖英明领导
+
+就如同[敬爱的金正恩同志](https://zh.wikipedia.org/wiki/%E9%87%91%E6%AD%A3%E6%81%A9)发出重要指示，二楼一定要盖在一楼上一样。PCL的联机功能基于一个小众猎奇平台[EasyTier](https://easytier.cn/index.html)，并且龙腾猫跃大元帅呼吁大伙一起搭建免费VPN来联机，所以龙腾猫跃大元帅因此获得了坚定的共产主义战士称号。
+
+![](assets/ideology-of-pcl/9.webp)
+
+PCL 联机的底层是一个叫 EasyTier 的组网工具。在 PCL 开放联机之前 PCL CE 和其他一些启动器也早已接入 EasyTier，很显然 EasyTier 并没有通过合规性审查，在发布之后已经喜提合规性击落，让我们默哀一[普朗克时间](https://zh.wikipedia.org/wiki/%E6%99%AE%E6%9C%97%E5%85%8B%E6%99%82%E9%96%93)。
+
+## 红星OS
+
+朝鲜的国产操作系统叫[红星OS](https://zh.wikipedia.org/wiki/%E7%B4%85%E6%98%9F%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1)，系统文件被改动就会被检测并且会给所有文件加水印追踪用户，笔者姑且把 PCL 的这套更新机制称作 红星OS主义 更新，服务器公告说静默就静默，当然，PCL 至少让你可以直接删除，这一点比红星 OS 强，但笔者暂时不打算因此给它颁发[诺贝尔和平奖。](https://zh.wikipedia.org/wiki/%E8%AF%BA%E8%B4%9D%E5%B0%94%E5%92%8C%E5%B9%B3%E5%A5%96)
+
+![](assets/ideology-of-pcl/5.webp)
+
+![](assets/ideology-of-pcl/6.webp)
+
+![](assets/ideology-of-pcl/7.webp)
+
+![](assets/ideology-of-pcl/8.webp)
+
+## 雷霆命名
+
+![](assets/ideology-of-pcl/12.webp)
+
+如果你搜索PCL的源码就会发现所有组件都是My开头命名比如MyComponent的这疑似有点太不共产主义了，笔者建议龙腾猫跃给所有组件重命名为OurComponent以贯彻共产主义到底。
+
+## 脚注
+
+1. 笑点解析：Claude Code和Reqable都是闭源软件，但是有一个Github仓库并且有一个很好看的README [↩](#footnote-ref-2)
+2. [开源的核心是用户可以自由修改并再分发](https://opensource.org/osd)，所以笔者认为它属于源码可见软件，而非开源软件。 [↩](#footnote-ref-1)
+3. [https://www.bilibili.com/opus/1261020063318671366](https://www.bilibili.com/opus/1261020063318671366) [↩](#footnote-ref-3)
+    ]]></md:Block>
+    <Paragraph>
+      转录说明：以上内容由页面 DOM 快照自动转换为 Markdown，仅用于存档检索；
+      排版、脚注与图片位置以页面快照为准。原文评论区未随快照存档。
+    </Paragraph>
+  </Section>
+
+  <Section title="页面快照">
+    <Media src="./archive/cubk/ideology-of-pcl/page-top.png" type="image" caption="页面首屏快照（2026-10-24 抓取）" />
+    <Paragraph>
+      完整快照包含：自包含的 [snapshot.html](./archive/cubk/ideology-of-pcl/snapshot.html)（可直接离线打开）、
+      正文 [article.md](./archive/cubk/ideology-of-pcl/article.md)、渲染后 DOM [article-fragment.html](./archive/cubk/ideology-of-pcl/article-fragment.html)、
+      首屏与页尾截图，以及 12 张原文配图。
+    </Paragraph>
+    <Media src="./archive/cubk-ideology-of-pcl-snapshot.zip" type="file" caption="下载完整页面快照（zip，含 12 张配图与全部转录文件）" />
+  </Section>
+
+  <Section title="相关链接">
+    <List type="bullet">
+      <ListItem>原文：[PCL 2的意识形态 - cubk.cn](https://cubk.cn/articles/ideology-of-pcl)</ListItem>
+      <ListItem>龙腾猫跃 2026-10-20 动态：[bilibili opus 1261020063318671366](https://www.bilibili.com/opus/1261020063318671366)</ListItem>
+      <ListItem>文中引用的授权文件：[Meloong-Git/PCL LICENCE](https://github.com/Meloong-Git/PCL/blob/6b9a50df911c9d68b69b24c979efba477fb14b67/LICENCE)</ListItem>
+      <ListItem>社区解锁补丁：[Ryorin1337/pcl-patcher](https://github.com/Ryorin1337/pcl-patcher)（通过 dnlib IL patching 恢复 MC 下载与整合包安装）</ListItem>
+      <ListItem>社区视频：[BV1Gfnc65EWv](https://www.bilibili.com/video/BV1Gfnc65EWv/)、[恢复下载功能插件演示](https://b23.tv/2xHFLEy)</ListItem>
+      <ListItem>HMCL：[HMCL-dev](https://github.com/HMCL-dev) / [Glavo](https://github.com/Glavo)</ListItem>
+      <ListItem>PCL 联机底层：[EasyTier](https://easytier.cn/index.html)</ListItem>
+    </List>
+  </Section>
+
+  <References>
+    <Ref id="1">cubk. 《PCL 2的意识形态》. 2026-10-21. https://cubk.cn/articles/ideology-of-pcl（本页存档于 2026-10-24）。</Ref>
+    <Ref id="2">龙腾猫跃. 哔哩哔哩动态. 2026-10-20. https://www.bilibili.com/opus/1261020063318671366</Ref>
+    <Ref id="3">Meloong-Git/PCL 授权文件（特定提交）. https://github.com/Meloong-Git/PCL/blob/6b9a50df911c9d68b69b24c979efba477fb14b67/LICENCE</Ref>
+    <Ref id="4">Ryorin1337. pcl-patcher. https://github.com/Ryorin1337/pcl-patcher</Ref>
+  </References>
+</Article>
