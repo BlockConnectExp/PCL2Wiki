@@ -1,7 +1,7 @@
 import { markdown } from '@codemirror/lang-markdown';
 import { xml } from '@codemirror/lang-xml';
-import { Compartment, EditorState } from '@codemirror/state';
-import { EditorView } from '@codemirror/view';
+import { Compartment, EditorState, Prec } from '@codemirror/state';
+import { EditorView, keymap } from '@codemirror/view';
 import { basicSetup } from 'codemirror';
 import { oneDark } from '@codemirror/theme-one-dark';
 import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
@@ -16,6 +16,26 @@ interface CodeEditorProps {
   format: 'xaml' | 'md';
   onChange: (value: string) => void;
 }
+
+function wrapSelection(view: EditorView, marker: string): boolean {
+  const { state } = view;
+  const { from, to } = state.selection.main;
+  const selected = state.sliceDoc(from, to) || '文本';
+  view.dispatch({
+    changes: { from, to, insert: `${marker}${selected}${marker}` },
+    selection: { anchor: from + marker.length, head: from + marker.length + selected.length },
+  });
+  return true;
+}
+
+const markdownShortcuts = Prec.high(
+  keymap.of([
+    { key: 'Mod-b', run: (view) => wrapSelection(view, '**') },
+    { key: 'Mod-i', run: (view) => wrapSelection(view, '*') },
+    { key: 'Mod-e', run: (view) => wrapSelection(view, '`') },
+    { key: 'Mod-s', run: () => true },
+  ]),
+);
 
 function currentTheme() {
   const explicit = document.documentElement.dataset.theme;
@@ -42,6 +62,7 @@ export const CodeEditor = forwardRef<CodeEditorHandle, CodeEditorProps>(function
         doc: value,
         extensions: [
           basicSetup,
+          markdownShortcuts,
           language,
           themeCompartment.current.of(currentTheme()),
           EditorView.lineWrapping,

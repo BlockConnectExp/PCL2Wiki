@@ -26,6 +26,9 @@
   --radius-sm: 4px;
   --radius: 8px;
   --shadow-soft: 0 1px 2px rgb(20 35 25 / 6%), 0 8px 24px rgb(20 35 25 / 6%);
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --dur-fast: 120ms;
+  --dur: 200ms;
   --topbar-height: 56px;
   --sidebar-width: 248px;
   --rail-width: 280px;

@@ -1,11 +1,26 @@
 import {
+  AlertTriangle,
+  ArrowLeft,
+  Columns2,
+  Copy,
   Download,
+  Eye,
+  FileCode2,
   FilePlus2,
-  FileUp,
+  FileText,
+  FolderOpen,
+  Image as ImageIcon,
   ImagePlus,
-  PackageOpen,
+  Info,
+  ListChecks,
+  Package,
+  PackageCheck,
+  PanelLeft,
+  PanelRight,
   Play,
+  Plus,
   Trash2,
+  Check,
 } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
@@ -20,6 +35,8 @@ import { exportWorkspace, importWorkspace } from './package-io';
 import { loadWorkspace, saveWorkspace } from './persistence';
 import { SNIPPETS } from './snippets';
 import { useEditorStore } from './store';
+
+type EditorLayout = 'code' | 'split' | 'preview';
 
 function downloadBlob(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob);
@@ -64,15 +81,18 @@ export function EditorPage() {
   } = useEditorStore();
   const [searchParams] = useSearchParams();
   const loadSlug = searchParams.get('load');
+  const [layout, setLayout] = useState<EditorLayout>('split');
   const [preview, setPreview] = useState<WikiDocument | null>(null);
   const [diagnostics, setDiagnostics] = useState<Diagnostic[]>([]);
   const [assetUrls, setAssetUrls] = useState<Record<string, string>>({});
   const [panel, setPanel] = useState<'preview' | 'diagnostics'>('preview');
   const [snippetId, setSnippetId] = useState(SNIPPETS[0]?.id ?? '');
   const [message, setMessage] = useState<string | null>(null);
+  const [confirmClear, setConfirmClear] = useState(false);
   const editorRef = useRef<CodeEditorHandle>(null);
   const importRef = useRef<HTMLInputElement>(null);
   const assetRef = useRef<HTMLInputElement>(null);
+  const clearTimer = useRef<number | null>(null);
 
   const activeArticle = useMemo(
     () => articles.find((article) => article.slug === activeSlug) ?? null,
@@ -188,6 +208,18 @@ export function EditorPage() {
     }
   };
 
+  const handleClear = () => {
+    if (!confirmClear) {
+      setConfirmClear(true);
+      clearTimer.current = window.setTimeout(() => setConfirmClear(false), 3000);
+      return;
+    }
+    if (clearTimer.current) window.clearTimeout(clearTimer.current);
+    setConfirmClear(false);
+    resetWorkspace();
+    notify('工作区已清空');
+  };
+
   const handleAssetFiles = async (files: FileList | null) => {
     if (!files?.length || !activeArticle) return;
     const snippets: string[] = [];
@@ -203,6 +235,20 @@ export function EditorPage() {
     if (snippet) editorRef.current?.insert(snippet.insert);
   };
 
+  const copyCurrent = async () => {
+    if (!activeArticle) return;
+    await navigator.clipboard.writeText(activeArticle.source);
+    notify('源码已复制');
+  };
+
+  const downloadCurrent = () => {
+    if (!activeArticle) return;
+    downloadBlob(
+      new Blob([activeArticle.source], { type: 'text/plain' }),
+      `${activeArticle.slug}.${activeArticle.format}`,
+    );
+  };
+
   const errorCount = diagnostics.filter((item) => item.severity === 'error').length;
   const warningCount = diagnostics.filter((item) => item.severity === 'warning').length;
 
@@ -210,33 +256,97 @@ export function EditorPage() {
     <div className="editor-shell">
       <header className="editor-topbar">
         <div className="editor-title">
-          <Link to="/">← 返回维基</Link>
+          <Link className="icon-button tip-below" to="/" data-tip="返回维基" aria-label="返回维基">
+            <ArrowLeft size={16} />
+          </Link>
           <strong>{manifest.title}</strong>
           <span>{manifest.id}</span>
         </div>
         <div className="editor-actions">
-          <button type="button" onClick={() => addArticle('xaml')}>
-            <FilePlus2 size={15} /> 新建 XAML
+          <button
+            type="button"
+            className="icon-button"
+            data-tip="新建 XAML 文稿"
+            aria-label="新建 XAML 文稿"
+            onClick={() => addArticle('xaml')}
+          >
+            <FilePlus2 size={16} />
           </button>
-          <button type="button" onClick={() => addArticle('md')}>
-            <FilePlus2 size={15} /> 新建 Markdown
+          <button
+            type="button"
+            className="icon-button"
+            data-tip="新建 Markdown 文稿"
+            aria-label="新建 Markdown 文稿"
+            onClick={() => addArticle('md')}
+          >
+            <FileCode2 size={16} />
           </button>
-          <button type="button" onClick={() => importRef.current?.click()}>
-            <PackageOpen size={15} /> 导入包
+          <button
+            type="button"
+            className="icon-button"
+            data-tip="导入 .wikipkg"
+            aria-label="导入内容包"
+            onClick={() => importRef.current?.click()}
+          >
+            <FolderOpen size={16} />
           </button>
-          <button type="button" onClick={() => void handleExport()}>
-            <FileUp size={15} /> 导出包
+          <button
+            type="button"
+            className="icon-button"
+            data-tip="导出 .wikipkg"
+            aria-label="导出内容包"
+            onClick={() => void handleExport()}
+          >
+            <PackageCheck size={16} />
           </button>
-          <button type="button" onClick={() => void resetWorkspace()}>
-            <Trash2 size={15} /> 清空
+          <button
+            type="button"
+            className={`icon-button danger${confirmClear ? ' confirming' : ''}`}
+            data-tip={confirmClear ? '再次点击确认清空' : '清空工作区'}
+            aria-label={confirmClear ? '再次点击确认清空' : '清空工作区'}
+            onClick={handleClear}
+          >
+            <Trash2 size={16} />
+          </button>
+        </div>
+        <div className="segmented" role="group" aria-label="编辑器布局">
+          <button
+            type="button"
+            className={layout === 'code' ? 'active' : undefined}
+            data-tip="仅编辑"
+            aria-label="仅编辑"
+            onClick={() => setLayout('code')}
+          >
+            <PanelLeft size={15} />
+          </button>
+          <button
+            type="button"
+            className={layout === 'split' ? 'active' : undefined}
+            data-tip="分栏"
+            aria-label="分栏"
+            onClick={() => setLayout('split')}
+          >
+            <Columns2 size={15} />
+          </button>
+          <button
+            type="button"
+            className={layout === 'preview' ? 'active' : undefined}
+            data-tip="仅预览"
+            aria-label="仅预览"
+            onClick={() => setLayout('preview')}
+          >
+            <PanelRight size={15} />
           </button>
         </div>
       </header>
 
-      <div className="editor-body">
+      <div className={`editor-body layout-${layout}`}>
         <aside className="editor-left">
           <section className="editor-panel">
-            <h2>内容包</h2>
+            <h2>
+              <Package size={13} aria-hidden="true" />
+              内容包
+            </h2>
             <label>
               <span>ID</span>
               <input
@@ -268,7 +378,10 @@ export function EditorPage() {
           </section>
 
           <section className="editor-panel">
-            <h2>文稿</h2>
+            <h2>
+              <FileText size={13} aria-hidden="true" />
+              文稿
+            </h2>
             <ul className="editor-file-list">
               {articles.map((article) => (
                 <li key={article.slug}>
@@ -283,8 +396,9 @@ export function EditorPage() {
                   <button
                     type="button"
                     className="icon-button"
+                    data-tip="删除文稿"
+                    aria-label={`删除文稿 ${article.title}`}
                     onClick={() => removeArticle(article.slug)}
-                    title="删除文稿"
                   >
                     <Trash2 size={13} />
                   </button>
@@ -295,7 +409,10 @@ export function EditorPage() {
           </section>
 
           <section className="editor-panel">
-            <h2>媒体</h2>
+            <h2>
+              <ImageIcon size={13} aria-hidden="true" />
+              媒体
+            </h2>
             <button type="button" className="wide" onClick={() => assetRef.current?.click()}>
               <ImagePlus size={15} /> 添加媒体
             </button>
@@ -307,8 +424,23 @@ export function EditorPage() {
                   <button
                     type="button"
                     className="icon-button"
+                    data-tip="插入到光标处"
+                    aria-label={`插入 ${asset.path}`}
+                    disabled={!activeArticle}
+                    onClick={() =>
+                      editorRef.current?.insert(
+                        `<Media src="./${asset.path}" type="${mediaKind(asset.mime)}" caption="" />`,
+                      )
+                    }
+                  >
+                    <Plus size={13} />
+                  </button>
+                  <button
+                    type="button"
+                    className="icon-button danger"
+                    data-tip="删除媒体"
+                    aria-label={`删除媒体 ${asset.path}`}
                     onClick={() => removeAsset(asset.path)}
-                    title="删除媒体"
                   >
                     <Trash2 size={13} />
                   </button>
@@ -344,19 +476,26 @@ export function EditorPage() {
                     </option>
                   ))}
                 </select>
-                <button type="button" onClick={insertSnippet} title="插入片段">
-                  <Play size={14} /> 插入
+                <button type="button" className="icon-button" data-tip="插入片段" aria-label="插入片段" onClick={insertSnippet}>
+                  <Play size={14} />
                 </button>
                 <button
                   type="button"
-                  onClick={() =>
-                    downloadBlob(
-                      new Blob([activeArticle.source], { type: 'text/plain' }),
-                      `${activeArticle.slug}.${activeArticle.format}`,
-                    )
-                  }
+                  className="icon-button"
+                  data-tip="复制源码"
+                  aria-label="复制源码"
+                  onClick={() => void copyCurrent()}
                 >
-                  <Download size={14} /> 当前文稿
+                  <Copy size={14} />
+                </button>
+                <button
+                  type="button"
+                  className="icon-button"
+                  data-tip="下载当前文稿"
+                  aria-label="下载当前文稿"
+                  onClick={downloadCurrent}
+                >
+                  <Download size={14} />
                 </button>
               </div>
               <CodeEditor
@@ -369,6 +508,7 @@ export function EditorPage() {
             </>
           ) : (
             <div className="editor-empty">
+              <FileText size={22} aria-hidden="true" />
               <p>尚未选择文稿</p>
               <button type="button" onClick={() => addArticle('xaml')}>
                 <FilePlus2 size={15} /> 新建 XAML
@@ -384,6 +524,7 @@ export function EditorPage() {
               className={panel === 'preview' ? 'active' : undefined}
               onClick={() => setPanel('preview')}
             >
+              <Eye size={14} aria-hidden="true" />
               预览
             </button>
             <button
@@ -391,6 +532,7 @@ export function EditorPage() {
               className={panel === 'diagnostics' ? 'active' : undefined}
               onClick={() => setPanel('diagnostics')}
             >
+              <ListChecks size={14} aria-hidden="true" />
               诊断 {errorCount + warningCount > 0 ? `(${errorCount + warningCount})` : ''}
             </button>
           </div>
@@ -398,7 +540,7 @@ export function EditorPage() {
             <div className="editor-preview">
               {preview ? (
                 <>
-                  <ArticleHeader meta={preview.meta} slug={preview.meta.slug} />
+                  <ArticleHeader meta={preview.meta} />
                   <ArticleContent blocks={preview.blocks} context={renderContext} />
                 </>
               ) : (
@@ -413,6 +555,11 @@ export function EditorPage() {
                 <ul>
                   {diagnostics.map((item, index) => (
                     <li key={`${item.code}-${index}`} className={item.severity}>
+                      {item.severity === 'info' ? (
+                        <Info size={13} aria-hidden="true" />
+                      ) : (
+                        <AlertTriangle size={13} aria-hidden="true" />
+                      )}
                       <code>{item.code}</code>
                       <span>{item.message}</span>
                     </li>
@@ -426,12 +573,22 @@ export function EditorPage() {
 
       <footer className="editor-status">
         <span>{activeArticle ? activeArticle.slug : '未选择文稿'}</span>
-        <span>{articles.length} 篇文稿</span>
-        <span>{assets.length} 个媒体</span>
         <span>
+          <FileText size={12} aria-hidden="true" />
+          {articles.length} 篇文稿
+        </span>
+        <span>
+          <ImageIcon size={12} aria-hidden="true" />
+          {assets.length} 个媒体
+        </span>
+        <span>
+          <AlertTriangle size={12} aria-hidden="true" />
           {errorCount} 错误 / {warningCount} 警告
         </span>
-        <span>本地自动保存</span>
+        <span>
+          <Check size={12} aria-hidden="true" />
+          本地自动保存
+        </span>
       </footer>
 
       <input

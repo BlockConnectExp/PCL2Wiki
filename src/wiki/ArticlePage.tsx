@@ -69,7 +69,7 @@ export function ArticlePage() {
   return (
     <div className="article-layout">
       <article className="wiki-article">
-        <ArticleHeader meta={articleDoc.meta} slug={entry.slug} />
+        <ArticleHeader meta={articleDoc.meta} />
         <ArticleContent blocks={body} context={context} />
         <GiscusComments term={`wiki:${entry.slug}`} />
       </article>

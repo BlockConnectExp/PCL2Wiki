@@ -66,10 +66,15 @@ audio {
   width: 32px;
   height: 32px;
   padding: 0;
+  position: relative;
   background: transparent;
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
   color: var(--color-muted);
+  transition:
+    background var(--dur-fast) var(--ease-standard),
+    color var(--dur-fast) var(--ease-standard),
+    border-color var(--dur-fast) var(--ease-standard);
 }
 
 .icon-button:hover {
@@ -77,10 +82,62 @@ audio {
   color: var(--color-text);
 }
 
+.icon-button.danger:hover {
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+}
+
+.icon-button.confirming {
+  background: var(--color-danger-soft);
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+.icon-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+[data-tip]::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translate(-50%, 4px);
+  padding: 5px 8px;
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.3;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity var(--dur-fast) var(--ease-standard),
+    transform var(--dur-fast) var(--ease-standard);
+  z-index: 60;
+}
+
+[data-tip]:hover::after,
+[data-tip]:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+[data-tip].tip-below::after {
+  bottom: auto;
+  top: calc(100% + 8px);
+  transform: translate(-50%, -4px);
+}
+
+[data-tip].tip-below:hover::after,
+[data-tip].tip-below:focus-visible::after {
+  transform: translate(-50%, 0);
+}
+
 .button,
-.editor-actions button,
-.editor-toolbar button,
-.editor-left button,
+.editor-left .wide,
 .editor-empty button {
   display: inline-flex;
   align-items: center;
@@ -90,12 +147,14 @@ audio {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   color: var(--color-text);
+  transition:
+    background var(--dur-fast) var(--ease-standard),
+    border-color var(--dur-fast) var(--ease-standard),
+    color var(--dur-fast) var(--ease-standard);
 }
 
 .button:hover,
-.editor-actions button:hover,
-.editor-toolbar button:hover,
-.editor-left button:hover,
+.editor-left .wide:hover,
 .editor-empty button:hover {
   border-color: var(--color-border-strong);
 }
@@ -203,8 +262,10 @@ a:focus-visible {
   color: var(--color-faint);
   font-size: 12px;
   font-weight: 650;
-  letter-spacing: 0.04em;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .sidebar-group ul,
@@ -217,6 +278,7 @@ a:focus-visible {
 .sidebar-group li a {
   display: block;
   padding: 6px 8px;
+  border-left: 2px solid transparent;
   border-radius: var(--radius-sm);
   color: var(--color-muted);
   font-size: 14px;
@@ -224,9 +286,13 @@ a:focus-visible {
 
 .sidebar-group li a:hover,
 .sidebar-group li a.active {
-  background: var(--color-surface-soft);
-  color: var(--color-text);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-strong);
   text-decoration: none;
+}
+
+.sidebar-group li a.active {
+  border-left-color: var(--color-accent);
 }
 
 .sidebar-editor {
@@ -273,7 +339,6 @@ a:focus-visible {
   font-family: var(--font-ui);
   font-size: 2rem;
   line-height: 1.25;
-  letter-spacing: -0.01em;
 }
 
 .article-meta {
@@ -291,14 +356,19 @@ a:focus-visible {
 
 .tag {
   padding: 2px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   background: var(--color-accent-soft);
   border-radius: 999px;
   color: var(--color-accent-strong);
   font-size: 12px;
 }
 
-.edit-link {
-  margin-left: auto;
+.article-meta > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .wiki-section {
@@ -554,7 +624,6 @@ blockquote footer {
 .infobox h2 {
   margin: 0 0 8px;
   font-size: 13px;
-  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
@@ -577,12 +646,23 @@ blockquote footer {
 .toc a {
   display: block;
   padding: 3px 0;
+  border-left: 2px solid transparent;
+  padding-left: 8px;
+  margin-left: -10px;
   color: var(--color-muted);
+  transition:
+    color var(--dur-fast) var(--ease-standard),
+    border-color var(--dur-fast) var(--ease-standard);
 }
 
-.toc a:hover {
+.toc a:hover,
+.toc a.active {
   color: var(--color-accent);
   text-decoration: none;
+}
+
+.toc a.active {
+  border-left-color: var(--color-accent);
 }
 
 .infobox th {
@@ -665,6 +745,8 @@ blockquote footer {
   display: flex;
   align-items: center;
   gap: 18px;
+  flex-wrap: wrap;
+  row-gap: 8px;
   padding: 8px 14px;
   background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
@@ -698,19 +780,70 @@ blockquote footer {
 .editor-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 4px;
   margin-left: auto;
 }
 
-.editor-actions button {
-  padding: 5px 9px;
-  font-size: 13px;
+.segmented {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.segmented button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 24px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  color: var(--color-muted);
+  transition:
+    background var(--dur-fast) var(--ease-standard),
+    color var(--dur-fast) var(--ease-standard);
+}
+
+.segmented button:hover {
+  color: var(--color-text);
+}
+
+.segmented button.active {
+  background: var(--color-surface);
+  color: var(--color-accent);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 14%);
 }
 
 .editor-body {
   display: grid;
   grid-template-columns: 280px minmax(360px, 1fr) minmax(340px, 0.95fr);
   min-height: 0;
+}
+
+.editor-body.layout-code {
+  grid-template-columns: 280px minmax(0, 1fr);
+}
+
+.editor-body.layout-code .editor-right {
+  display: none;
+}
+
+.editor-body.layout-preview {
+  grid-template-columns: 280px minmax(0, 1fr);
+}
+
+.editor-body.layout-preview .editor-center {
+  display: none;
+}
+
+.editor-body.layout-preview .editor-right {
+  border-left: 1px solid var(--color-border);
 }
 
 .editor-left,
@@ -738,8 +871,14 @@ blockquote footer {
   margin: 0 0 8px;
   color: var(--color-muted);
   font-size: 12px;
-  letter-spacing: 0.04em;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.editor-panel h2 svg {
+  color: var(--color-faint);
 }
 
 .editor-panel label {
@@ -774,6 +913,7 @@ blockquote footer {
   justify-content: space-between;
   min-width: 0;
   padding: 5px 7px;
+  border: 1px solid transparent;
   background: transparent;
   border-color: transparent;
   text-align: left;
@@ -866,6 +1006,9 @@ blockquote footer {
 }
 
 .editor-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 8px 12px;
   background: transparent;
   border: 0;
@@ -948,6 +1091,17 @@ blockquote footer {
   border-top: 1px solid var(--color-border);
   color: var(--color-muted);
   font-size: 12px;
+}
+
+.editor-status span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.editor-asset-list .icon-button {
+  width: 26px;
+  height: 26px;
 }
 
 .toast {
@@ -1041,4 +1195,145 @@ blockquote footer {
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* Motif & motion */
+
+.home,
+.empty-state {
+  animation: rise var(--dur) var(--ease-standard) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.toast {
+  animation: toast-in var(--dur) var(--ease-standard) both;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.empty-state {
+  display: grid;
+  place-items: center;
+  gap: 6px;
+  margin-top: 32px;
+  padding: 64px 24px;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.empty-state .glyph {
+  color: var(--color-faint);
+}
+
+.empty-state h1 {
+  margin: 8px 0 0;
+  font-size: 1.4rem;
+}
+
+.article-list li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.article-list li a svg {
+  color: var(--color-faint);
+}
+
+.wiki-details > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-weight: 600;
+}
+
+.wiki-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.wiki-details > summary::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  margin-left: auto;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform var(--dur-fast) var(--ease-standard);
+}
+
+.wiki-details[open] > summary::after {
+  transform: rotate(225deg);
+}
+
+.sidebar,
+.editor-left,
+.editor-center,
+.editor-right,
+.toc,
+.infobox,
+.editor-preview,
+.editor-diagnostics {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.sidebar::-webkit-scrollbar,
+.editor-left::-webkit-scrollbar,
+.editor-center::-webkit-scrollbar,
+.editor-right::-webkit-scrollbar,
+.toc::-webkit-scrollbar,
+.infobox::-webkit-scrollbar,
+.editor-preview::-webkit-scrollbar,
+.editor-diagnostics::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.editor-left::-webkit-scrollbar-thumb,
+.editor-center::-webkit-scrollbar-thumb,
+.editor-right::-webkit-scrollbar-thumb,
+.toc::-webkit-scrollbar-thumb,
+.infobox::-webkit-scrollbar-thumb,
+.editor-preview::-webkit-scrollbar-thumb,
+.editor-diagnostics::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+.editor-left::-webkit-scrollbar-thumb:hover,
+.editor-center::-webkit-scrollbar-thumb:hover,
+.editor-right::-webkit-scrollbar-thumb:hover,
+.toc::-webkit-scrollbar-thumb:hover,
+.infobox::-webkit-scrollbar-thumb:hover,
+.editor-preview::-webkit-scrollbar-thumb:hover,
+.editor-diagnostics::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-strong);
 }

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { BookOpen, FileText } from 'lucide-react';
 import { useContentIndex } from './ContentIndexProvider';
 
 export function HomePage() {
@@ -9,11 +9,9 @@ export function HomePage() {
   if (index.articles.length === 0) {
     return (
       <section className="empty-state">
+        <BookOpen className="glyph" size={28} aria-hidden="true" />
         <h1>尚无文稿</h1>
         <p>内容包就绪后，文章会出现在这里。</p>
-        <Link className="button primary" to="/editor">
-          打开编辑器
-        </Link>
       </section>
     );
   }
@@ -33,7 +31,10 @@ export function HomePage() {
             <ul className="article-list">
               {articles.map((article) => (
                 <li key={`${pkg.id}:${article.slug}`}>
-                  <Link to={`/wiki/${article.slug}`}>{article.title}</Link>
+                  <a href={`#/wiki/${article.slug}`}>
+                    <FileText size={14} aria-hidden="true" />
+                    {article.title}
+                  </a>
                   {article.summary && <p>{article.summary}</p>}
                 </li>
               ))}

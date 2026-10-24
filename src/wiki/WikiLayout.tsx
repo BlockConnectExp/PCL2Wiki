@@ -1,4 +1,4 @@
-import { BookOpen, Moon, PencilLine, Sun } from 'lucide-react';
+import { BookOpen, Moon, Package, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { SITE } from '../config/site';
@@ -44,7 +44,6 @@ export function WikiLayout() {
         </Link>
         <nav className="topbar-nav" aria-label="主导航">
           <Link to="/">首页</Link>
-          <Link to="/editor">编辑器</Link>
           <a href={`https://github.com/${SITE.repo}`} target="_blank" rel="noreferrer noopener">
             GitHub
           </a>
@@ -62,7 +61,10 @@ export function WikiLayout() {
           ) : (
             packages.map((pkg) => (
               <section key={pkg.id} className="sidebar-group">
-                <h2>{pkg.title}</h2>
+                <h2>
+                  <Package size={12} aria-hidden="true" />
+                  {pkg.title}
+                </h2>
                 <ul>
                   {pkg.articles.map((article) => (
                     <li key={`${pkg.id}:${article.slug}`}>
@@ -78,10 +80,6 @@ export function WikiLayout() {
               </section>
             ))
           )}
-          <Link className="sidebar-editor" to="/editor">
-            <PencilLine size={14} aria-hidden="true" />
-            打开编辑器
-          </Link>
         </aside>
 
         <main className="wiki-main">

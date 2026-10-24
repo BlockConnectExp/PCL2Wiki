@@ -49,6 +49,27 @@ version: v26.0-Alpha 1
 
 ---
 
+## 2026.10.24-13:40: UIRefresh
+
+ChangedFiles:
+```
+.\src\wiki\* +20 -14
+.\src\editor\* +140 -60
+.\src\styles\* +150 -12
+```
+
+ChangeLog:
+Num|File Name|Change Description|Change Time|Changer
+----|----|----|----|----
+1|WikiLayout/HomePage/ArticleContent|隐藏编辑器入口|2026.10.24-13:40:00|AI (PCL2Wiki)
+2|EditorPage|图标工具栏、布局分段、两步清空、媒体插入|2026.10.24-13:40:00|AI (PCL2Wiki)
+3|CodeEditor|Markdown 包裹快捷键|2026.10.24-13:40:00|AI (PCL2Wiki)
+4|base.css|tooltip、动效、目录/侧栏激活态、滚动条|2026.10.24-13:40:00|AI (PCL2Wiki)
+
+version: v26.0-Alpha 1
+
+---
+
 License: TBD
 
 GitHub@BlockConnectExp | BlockConnectLab@StarsailsClover

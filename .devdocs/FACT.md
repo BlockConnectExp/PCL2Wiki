@@ -77,6 +77,42 @@ version: v26.0-Alpha 1
 
 ---
 
+## 2026.10.24-13:40: UIRefresh 003
+
+Files:
+```
+.\src\wiki\WikiLayout.tsx +0 -8
+.\src\wiki\HomePage.tsx +4 -6
+.\src\wiki\Toc.tsx +20 -3
+.\src\editor\EditorPage.tsx +120 -60
+.\src\editor\CodeEditor.tsx +18 -0
+.\src\styles\base.css +140 -10
+```
+
+### What's Happened?
+
+- 隐藏维基侧全部编辑器入口：顶栏、侧栏、首页空状态与文章页"编辑此页"不再出现，`/editor` 路由保留直链访问。
+- 编辑器工具栏改为图标按钮 + tooltip，新增布局分段控件（仅编辑 / 分栏 / 仅预览）。
+- 清空工作区改为两步确认；媒体列表支持一键插入；新增复制源码。
+- CodeMirror 新增 `Ctrl+B/I/E` Markdown 包裹与 `Ctrl+S` 拦截。
+- 目录滚动跟随高亮、侧栏激活指示条、空状态插画、toast 与页面入场动效。
+
+### Any evidence?
+
+```
+npm run lint / typecheck / test / build  # pass
+IAB screenshots: home empty state, editor split/preview modes
+```
+
+### FACTs
+
+1. 编辑器入口仅保留直链 `/editor`，正文页不再暴露编辑链接。
+2. 所有新增动效均使用 transform/opacity，且被 `prefers-reduced-motion` 全局关闭。
+
+version: v26.0-Alpha 1
+
+---
+
 License: TBD
 
 GitHub@BlockConnectExp | BlockConnectLab@StarsailsClover
