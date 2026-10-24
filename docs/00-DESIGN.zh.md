@@ -659,7 +659,8 @@ PCL2Wiki/
 | Q6 | 不添加示例文稿，空内容状态可用 | 已落地 |
 | Q7 | 样式使用 CSS 变量 + 语义类，不引入 Tailwind | 已落地 |
 | Q8 | 评论使用 giscus（GitHub Discussions），无后端 | 代码已就绪，待安装 GitHub App |
-| Q9 | 自定义域 `pcl2.n0th1n3ssd0ma1n.top` | 待 DNS CNAME 指向 `blockconnectexp.github.io` |
+| Q9 | 自定义域 `pcl2.n0th1n3ssd0ma1n.top` | 已落地：Cloudflare CNAME -> `blockconnectexp.github.io`，仅 DNS |
+| Q10 | GitHub Pages 与 HTTPS | 已部署，`https_enforced=true`，证书校验通过 |
 
 ---
 
@@ -672,14 +673,14 @@ PCL2Wiki/
 3. WikiXAML/Markdown 双源解析、统一 AST、React 渲染器、目录、锚点、KaTeX。
 4. 维基页、首页空状态、`/editor` 工作台、`.wikipkg` 导入导出。
 5. GitHub Pages 工作流、`public/CNAME`、giscus 挂载点。
+6. Cloudflare CNAME、Pages 自定义域与 HTTPS，线上 `https://pcl2.n0th1n3ssd0ma1n.top/` 验证通过。
 
 待完成：
 
-1. 首次提交推送到 `v26.0` 并合并到 `main`，触发 Pages 部署。
-2. Cloudflare 添加 `pcl2` CNAME 到 `blockconnectexp.github.io`，Pages 设置自定义域并开启 HTTPS。
-3. 在 `BlockConnectExp/PCL2Wiki` 安装 giscus GitHub App，并把仓库 ID / 分类 ID 写入 `VITE_GISCUS_*`。
-4. M3：搜索面板、分类导航、标注/引用完善。
-5. M4：内容校验收紧、包迁移工具、英文文档。
+1. 在 `BlockConnectExp/PCL2Wiki` 安装 giscus GitHub App（仓库权限变更，需要 Owner 确认一次）。
+2. 安装后把变量 `VITE_GISCUS_ENABLED` 设为 `true` 并重跑 Pages 工作流。
+3. M3：搜索面板、分类导航、标注/引用完善。
+4. M4：内容校验收紧、包迁移工具、英文文档。
 
 ---
 

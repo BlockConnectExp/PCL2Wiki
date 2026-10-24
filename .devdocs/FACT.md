@@ -43,6 +43,40 @@ version: v26.0-Alpha 1
 
 ---
 
+## 2026.10.24-13:10:00 PagesAndDomain 002
+
+Files:
+```
+.\public\CNAME +1 -0
+.\docs\00-DESIGN.zh.md +30 -10
+```
+
+### What's Happened?
+
+- 创建 Cloudflare DNS 记录：`CNAME pcl2 -> blockconnectexp.github.io`，代理状态为仅 DNS。
+- GitHub Pages 自定义域设为 `pcl2.n0th1n3ssd0ma1n.top`，并开启 HTTPS 强制。
+- GitHub Actions `Deploy GitHub Pages` 在 `main` 上部署成功。
+
+### Any evidence?
+
+```
+curl -s -o NUL -w "verify=%{ssl_verify_result} http=%{http_code}" https://pcl2.n0th1n3ssd0ma1n.top/
+# verify=0 http=200 (remote 185.199.110.153)
+curl https://pcl2.n0th1n3ssd0ma1n.top/content/index.json
+# {"spec":"pcl2wiki-index/1", ...}
+IAB screenshots: home page dark theme, /editor three-pane workspace
+```
+
+### FACTs
+
+1. Cloudflare zone `n0th1n3ssd0ma1n.top` 的 DNS 已包含 `pcl2` CNAME。
+2. GitHub Pages `build_type=workflow`，部署环境允许 `main` 与 `v26.0`。
+3. giscus 组件已就绪但 `VITE_GISCUS_ENABLED=false`，未安装 App 前不会请求脚本。
+
+version: v26.0-Alpha 1
+
+---
+
 License: TBD
 
 GitHub@BlockConnectExp | BlockConnectLab@StarsailsClover

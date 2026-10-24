@@ -29,6 +29,26 @@ version: v26.0-Alpha 1
 
 ---
 
+## 2026.10.24-13:10:00 PagesAndDomain
+
+GitCommitHash: ea74664221897351ebda68cc5cddb658eba7f54a
+
+ChangedFiles:
+```
+.\public\CNAME +1 -0
+.\docs\00-DESIGN.zh.md +30 -10
+```
+
+ChangeLog:
+Num|File Name|Change Description|Change Time|Changer
+----|----|----|----|----
+1|CNAME|GitHub Pages 自定义域|2026.10.24-13:10:00|AI (PCL2Wiki)
+2|00-DESIGN.zh.md|记录 Pages/DNS/HTTPS 完成状态|2026.10.24-13:10:00|AI (PCL2Wiki)
+
+version: v26.0-Alpha 1
+
+---
+
 License: TBD
 
 GitHub@BlockConnectExp | BlockConnectLab@StarsailsClover
