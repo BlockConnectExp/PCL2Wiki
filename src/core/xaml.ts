@@ -190,7 +190,7 @@ function parseDetails(element: Element, context: ParseContext): BlockNode {
 }
 
 function parseGallery(element: Element, context: ParseContext): BlockNode {
-  const items: { src: string; caption?: string; alt?: string }[] = [];
+  const items: { src: string; caption?: string; alt?: string; id?: string; label?: string }[] = [];
 
   for (const child of childElements(element)) {
     if (child.localName !== 'Media') {
@@ -206,6 +206,8 @@ function parseGallery(element: Element, context: ParseContext): BlockNode {
       src,
       caption: child.getAttribute('caption') ?? undefined,
       alt: child.getAttribute('alt') ?? undefined,
+      id: child.getAttribute('id') ?? undefined,
+      label: child.getAttribute('label') ?? undefined,
     });
   }
 

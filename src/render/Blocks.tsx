@@ -1,7 +1,113 @@
 import type { BlockNode } from '../core/types';
+import { useEffect, useRef, useState } from 'react';
 import { InlineNodes } from './InlineNodes';
 import { MathValue } from './MathValue';
 import type { RenderContext } from './context';
+
+type GalleryItem = Extract<BlockNode, { type: 'gallery' }>['items'][number];
+
+function GalleryBanner({ items, context }: { items: GalleryItem[]; context: RenderContext }) {
+  const wrapperRef = useRef<HTMLElement | null>(null);
+  const viewportRef = useRef<HTMLDivElement | null>(null);
+  const trackRef = useRef<HTMLDivElement | null>(null);
+  const [pinned, setPinned] = useState(false);
+
+  useEffect(() => {
+    const wrapper = wrapperRef.current;
+    const viewport = viewportRef.current;
+    const track = trackRef.current;
+    if (!wrapper || !viewport || !track) return;
+
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let frame = 0;
+    let distance = 0;
+    let wrapperTop = 0;
+
+    const measure = () => {
+      const canPin = items.length >= 3 && window.innerWidth >= 720 && !motion.matches;
+      if (!canPin) {
+        setPinned(false);
+        wrapper.style.height = '';
+        track.style.transform = '';
+        distance = 0;
+        return;
+      }
+      setPinned(true);
+      const pinHeight = Math.min(window.innerHeight * 0.62, 520);
+      viewport.style.setProperty('--gallery-pin-height', `${pinHeight}px`);
+      distance = Math.max(0, track.scrollWidth - viewport.clientWidth);
+      wrapper.style.height = `${pinHeight + distance}px`;
+      wrapperTop = window.scrollY + wrapper.getBoundingClientRect().top;
+    };
+
+    const update = () => {
+      if (!distance) return;
+      const progress = Math.min(1, Math.max(0, (window.scrollY - wrapperTop) / distance));
+      track.style.transform = `translate3d(${(-progress * distance).toFixed(2)}px, 0, 0)`;
+    };
+
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        update();
+      });
+    };
+
+    const onResize = () => {
+      measure();
+      update();
+    };
+
+    measure();
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
+    const observer = new ResizeObserver(onResize);
+    observer.observe(track);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
+      observer.disconnect();
+      if (frame) window.cancelAnimationFrame(frame);
+      wrapper.style.height = '';
+      track.style.transform = '';
+    };
+  }, [items.length]);
+
+  return (
+    <section
+      ref={wrapperRef}
+      className={`gallery-banner${pinned ? ' is-pinned' : ''}`}
+      aria-label="图片画廊"
+    >
+      <div ref={viewportRef} className="gallery-banner__viewport">
+        <div ref={trackRef} className="gallery-banner__track">
+          {items.map((item, index) => (
+            <figure
+              key={index}
+              className="gallery-banner__item"
+              id={item.id ? `gallery-${item.id}` : undefined}
+            >
+              <img
+                src={context.resolveAsset(item.src)}
+                alt={item.alt ?? item.caption ?? ''}
+                loading="lazy"
+              />
+              {(item.label || item.caption) && (
+                <figcaption>
+                  {item.label && <span className="gallery-banner__label">{item.label}</span>}
+                  {item.caption && <span>{item.caption}</span>}
+                </figcaption>
+              )}
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function headingHref(slug: string, anchor: string): string {
   return `#/wiki/${encodeURIComponent(slug)}#${encodeURIComponent(anchor)}`;
@@ -174,16 +280,7 @@ function renderBlock(block: BlockNode, key: number, context: RenderContext) {
         </details>
       );
     case 'gallery':
-      return (
-        <div key={key} className="gallery">
-          {block.items.map((item, index) => (
-            <figure key={index}>
-              <img src={context.resolveAsset(item.src)} alt={item.alt ?? item.caption ?? ''} loading="lazy" />
-              {item.caption && <figcaption>{item.caption}</figcaption>}
-            </figure>
-          ))}
-        </div>
-      );
+      return <GalleryBanner key={key} items={block.items} context={context} />;
     case 'hr':
       return <hr key={key} />;
     case 'diagnostic':

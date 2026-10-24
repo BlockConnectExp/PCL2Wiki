@@ -53,7 +53,10 @@ export type BlockNode =
   | { type: 'references'; items: { id: string; children: InlineNode[] }[] }
   | { type: 'note'; kind: NoteKind; children: BlockNode[] }
   | { type: 'details'; summary: string; children: BlockNode[] }
-  | { type: 'gallery'; items: { src: string; caption?: string; alt?: string }[] }
+  | {
+      type: 'gallery';
+      items: { src: string; caption?: string; alt?: string; id?: string; label?: string }[];
+    }
   | { type: 'hr' }
   | { type: 'diagnostic'; diagnostic: Diagnostic };
 

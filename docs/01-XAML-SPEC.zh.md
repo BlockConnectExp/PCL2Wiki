@@ -133,7 +133,7 @@
 | `<Note>` | `type`=`note\|tip\|warning\|danger\|important` | 块级元素 | 语义提示块 |
 | `<Details>` | `summary` | 块级元素 | 折叠块 |
 | `<Summary>` | - | 文本 | `<Details>` 的标题子元素 |
-| `<Gallery>` | - | `<Media>` | 图组 |
+| `<Gallery>` | - | `<Media id label>` | 滚动驱动的横幅画廊；`id` 生成 `gallery-<id>` 锚点，`label` 显示证据编号 |
 | `<SeeAlso>` | - | `<Link>` | 参见列表 |
 | `<Link>` | `slug`、`title` | 无 | 参见条目（仅用于 `<SeeAlso>` 内） |
 | `<References>` | - | `<Ref>` | 参考文献 |

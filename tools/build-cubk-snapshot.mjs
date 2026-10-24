@@ -119,6 +119,15 @@ const manifest = {
       summary:
         '根据天养群聊记录整理的十月事件起因链，并区分“家长举报 PCL”与“网易关闭渠道服”两条独立因果。',
     },
+    {
+      slug: 'evidence',
+      title: '证据存档预览',
+      source: 'articles/evidence.xaml',
+      tags: ['十月事件', '证据', '存档'],
+      updated: '2026-10-24',
+      summary:
+        '十月事件起因页引用的 8 张原始证据截图，按官方表态、群聊记录与应用商店现状分组为滚动画廊。',
+    },
   ],
   assets,
   generator: 'pcl2wiki-archive/0.1.0',

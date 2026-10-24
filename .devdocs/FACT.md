@@ -184,6 +184,46 @@ version: v26.0-Alpha 1
 
 ---
 
+## 2026.10.24-17:30: EvidenceGallery 006
+
+Files:
+```
+.\src\core\types.ts +4 -1
+.\src\core\xaml.ts +4 -1
+.\src\render\Blocks.tsx +80 -10
+.\src\styles\base.css +60 -20
+.\public\content\pcl2-oct-events\articles\evidence.xaml +1 -0
+.\public\content\pcl2-oct-events\articles\origins.xaml +20 -20
+.\public\content\pcl2-oct-events\archive\chat\tianyang-2026-10-20-transcript.md +12 -12
+```
+
+### What's Happened?
+
+- `<Gallery>` 升级为横幅画廊：3 张以上时启用“粘性视窗 + 滚动进度驱动轨道”，2 张时保持横向 scroll-snap。
+- 画廊项支持 `id` / `label`，生成 `gallery-<id>` 锚点，正文可按编号内链。
+- 新增证据页《证据存档预览》（3 个画廊、e1–e8），聊天记录从起因页正文移出；起因页正文只保留 2 张附图并链接到对应编号。
+- 群员与群名统一附加 @ 标识（@天养、@龙腾猫跃、@路边一条、@零、@山雨摧危楼、@NKN、@Big_Cake）。
+
+### Any evidence?
+
+```
+IAB + CDP Emulation 1440x900:
+  .gallery-banner.is-pinned height=2013px
+  track transform: 0px -> -1493px after scrolling
+窄视口回退: .gallery-banner 无 is-pinned，横向 scroll-snap 可用
+npm run lint / typecheck / test / build  # pass
+CDP device metrics override 已在验证后清除
+```
+
+### FACTs
+
+1. 滚动驱动画廊仅在宽度 ≥720px、非 reduced-motion、且画廊项 ≥3 时启用。
+2. 起因页正文只保留 @龙腾猫跃 动态与小米商店两张附图；8 张原始截图全部在证据页。
+
+version: v26.0-Alpha 1
+
+---
+
 License: TBD
 
 GitHub@BlockConnectExp | BlockConnectLab@StarsailsClover

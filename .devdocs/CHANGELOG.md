@@ -112,6 +112,29 @@ version: v26.0-Alpha 1
 
 ---
 
+## 2026.10.24-17:30: EvidenceGallery
+
+ChangedFiles:
+```
+.\src\render\Blocks.tsx +80 -10
+.\src\styles\base.css +60 -20
+.\src\core\types.ts +4 -1
+.\src\core\xaml.ts +4 -1
+.\public\content\pcl2-oct-events\** +20 -20
+```
+
+ChangeLog:
+Num|File Name|Change Description|Change Time|Changer
+----|----|----|----|----
+1|Blocks.tsx|滚动驱动粘性横幅画廊与锚点|2026.10.24-17:30:00|AI (PCL2Wiki)
+2|evidence.xaml|证据存档预览页|2026.10.24-17:30:00|AI (PCL2Wiki)
+3|origins.xaml|聊天记录移出正文、附图与内链|2026.10.24-17:30:00|AI (PCL2Wiki)
+4|transcript|群员/群名 @ 标识|2026.10.24-17:30:00|AI (PCL2Wiki)
+
+version: v26.0-Alpha 1
+
+---
+
 License: TBD
 
 GitHub@BlockConnectExp | BlockConnectLab@StarsailsClover
