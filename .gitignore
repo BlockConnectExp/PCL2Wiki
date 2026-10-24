@@ -1,0 +1,16 @@
+node_modules/
+dist/
+coverage/
+*.local
+.vite/
+.env
+.env.*
+!.env.example
+public/content/index.json
+*.wikipkg
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
+

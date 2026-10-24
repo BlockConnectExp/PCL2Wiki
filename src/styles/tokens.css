@@ -1,0 +1,79 @@
+:root {
+  color-scheme: light;
+  --font-ui:
+    system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-article: ui-serif, 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', serif;
+  --font-mono: 'Cascadia Code', 'JetBrains Mono', Consolas, monospace;
+
+  --color-bg: #f5f7f4;
+  --color-surface: #ffffff;
+  --color-surface-soft: #eef2ec;
+  --color-border: #d9dfd7;
+  --color-border-strong: #b9c3b8;
+  --color-text: #1b2420;
+  --color-muted: #5f6c64;
+  --color-faint: #8a968e;
+  --color-accent: #1f7a3f;
+  --color-accent-strong: #176331;
+  --color-accent-soft: #e2f2e7;
+  --color-warning: #9a5b09;
+  --color-warning-soft: #fdf1dd;
+  --color-danger: #a02a2a;
+  --color-danger-soft: #fbe8e8;
+  --color-info: #2b5d8a;
+  --color-info-soft: #e7f0f8;
+
+  --radius-sm: 4px;
+  --radius: 8px;
+  --shadow-soft: 0 1px 2px rgb(20 35 25 / 6%), 0 8px 24px rgb(20 35 25 / 6%);
+  --topbar-height: 56px;
+  --sidebar-width: 248px;
+  --rail-width: 280px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --color-bg: #121714;
+    --color-surface: #1a211d;
+    --color-surface-soft: #202821;
+    --color-border: #303a32;
+    --color-border-strong: #465247;
+    --color-text: #e7ece8;
+    --color-muted: #a8b3aa;
+    --color-faint: #7b877e;
+    --color-accent: #63c184;
+    --color-accent-strong: #8ad3a3;
+    --color-accent-soft: #1d3526;
+    --color-warning: #e0a552;
+    --color-warning-soft: #3a2c16;
+    --color-danger: #ef8b8b;
+    --color-danger-soft: #3b1f1f;
+    --color-info: #8bb8df;
+    --color-info-soft: #1c2d3d;
+    --shadow-soft: 0 1px 2px rgb(0 0 0 / 30%), 0 10px 28px rgb(0 0 0 / 28%);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-bg: #121714;
+  --color-surface: #1a211d;
+  --color-surface-soft: #202821;
+  --color-border: #303a32;
+  --color-border-strong: #465247;
+  --color-text: #e7ece8;
+  --color-muted: #a8b3aa;
+  --color-faint: #7b877e;
+  --color-accent: #63c184;
+  --color-accent-strong: #8ad3a3;
+  --color-accent-soft: #1d3526;
+  --color-warning: #e0a552;
+  --color-warning-soft: #3a2c16;
+  --color-danger: #ef8b8b;
+  --color-danger-soft: #3b1f1f;
+  --color-info: #8bb8df;
+  --color-info-soft: #1c2d3d;
+  --shadow-soft: 0 1px 2px rgb(0 0 0 / 30%), 0 10px 28px rgb(0 0 0 / 28%);
+}
+
