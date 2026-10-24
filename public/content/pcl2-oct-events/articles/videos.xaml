@@ -12,7 +12,7 @@
     <Infobox.Field label="素材">2 段原始视频 + 2 份转录稿</Infobox.Field>
     <Infobox.Field label="时长">0:59 与 3:56</Infobox.Field>
     <Infobox.Field label="规格">852×480 / H.264 + AAC</Infobox.Field>
-    <Infobox.Field label="来源">Owner 提供原件，视频作者见正文</Infobox.Field>
+    <Infobox.Field label="来源">整理者提供原件，视频作者见正文</Infobox.Field>
     <Infobox.Field label="编号">v1 – v2</Infobox.Field>
   </Infobox>
 
@@ -136,7 +136,7 @@
 
   <Section title="争议：投诉、网络暴力与「捂嘴」说法">
     <Paragraph>
-      视频传播后，围绕作者与相关方的争议随之出现。据 Owner 与相关人士转述：
+      视频传播后，围绕作者与相关方的争议随之出现。据 整理者与相关人士转述：
       v1 作者 **小坤鸽** 在视频发布后遭到网友的网络暴力与人身攻击；
       同时据称 **瓜皮龙**（PCL2 所属主体，`龙腾猫跃` 即法人尹海航）方面提出了投诉。
       有相关人士认为这可能是「捂嘴霸凌」，但这个判断**尚未被独立核实**，本站无法确认真伪，
@@ -173,9 +173,9 @@
   </SeeAlso>
 
   <References>
-    <Ref id="1">视频 v1 原件与转录稿，Owner 提供（文件 video1.mp4 / video1.txt）。</Ref>
-    <Ref id="2">视频 v2 原件与转录稿，Owner 提供（文件 video2.mp4 / video2.txt）。</Ref>
-    <Ref id="3">Owner 补充说明：v1 作者小坤鸽遭到网络暴力与人身攻击，相关方提出投诉，据相关人士称可能为「捂嘴霸凌」，建议理性看待。</Ref>
+    <Ref id="1">视频 v1 原件与转录稿，整理者提供（文件 video1.mp4 / video1.txt）。</Ref>
+    <Ref id="2">视频 v2 原件与转录稿，整理者提供（文件 video2.mp4 / video2.txt）。</Ref>
+    <Ref id="3">整理者补充说明：v1 作者小坤鸽遭到网络暴力与人身攻击，相关方提出投诉，据相关人士称可能为「捂嘴霸凌」，建议理性看待。</Ref>
     <Ref id="4">v2 作者在视频中的自我限定：证据支持远程控制能力与权限边界问题，尚不支持已恶意使用、已盗号或任意互联网用户均可入侵。</Ref>
   </References>
 </Article>

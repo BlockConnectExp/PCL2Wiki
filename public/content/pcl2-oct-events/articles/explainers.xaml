@@ -1,0 +1,98 @@
+<Article
+  xmlns="https://pcl2.n0th1n3ssd0ma1n.top/schema/1"
+  xmlns:md="https://pcl2.n0th1n3ssd0ma1n.top/markdown/1"
+  title="讲解视频归档：五段事件复盘"
+  slug="explainers"
+  lang="zh-CN"
+  tags="十月事件,视频,复盘,证据"
+  updated="2026-10-25"
+  summary="事件后流传的五段讲解视频原件与转录：当天复盘、DDoS 报告、线索调查、推测向复盘、法条分析。每段都标出它的结论与自设边界。">
+
+  <Infobox>
+    <Infobox.Field label="素材">5 段视频（合计约 56 MB）+ 5 份转录稿</Infobox.Field>
+    <Infobox.Field label="时长">6:13 / 1:51 / 6:19 / 5:21 / 4:47</Infobox.Field>
+    <Infobox.Field label="来源">整理者提供原件</Infobox.Field>
+    <Infobox.Field label="编号">x1 – x5</Infobox.Field>
+  </Infobox>
+
+  <Note type="note">
+    <Paragraph>
+      以下视频属于**第三方复盘**，不是官方记录。每段视频的结论强度差别很大：
+      x1／x5 以可复核事实为主，x2 引用的是官方后台截图，x3 与 x4 含大量**推测**。
+      引用时请跟着编号，别把推测当结论。
+    </Paragraph>
+  </Note>
+
+  <Section title="x1 事件当天复盘（6:13）">
+    <Media src="./archive/videos/video3-day-one-recap.mp4" type="video" caption="x1：10 月 20 日当天的时间线复盘与替代方案整理。" />
+    <List type="unordered">
+      <ListItem>**时间线**：15:01 发布 2.99.0.0（更新日志两行）；随后 B 站/贴吧/QQ 群在 20 分钟内出现十几条「悲报」视频；16:00–17:00 有玩家发现中国版在部分安卓应用商店搜不到本体（官网与 TapTap 仍可访问）。</ListItem>
+      <ListItem>**三个流传版本**：成人向模组被家长看到、私服充值被家长举报、网易版充值被家长举报——视频明确指出**三个版本都没有实锤**。</ListItem>
+      <ListItem>**前情**：约一周前（10 月 11 日前后）网易版「绿宝石模组」公告将于 11 月 8 日下架并改为付费，玩家情绪被叠加。</ListItem>
+      <ListItem>**替代方案**：官方启动器下载后导入、旧版本断网关闭更新、社区版、国外启动器；同时警告「修复版 EXE」已出现中毒案例。</ListItem>
+    </List>
+  </Section>
+
+  <Section title="x2 DDoS 报告（1:51）">
+    <Media src="./archive/videos/video4-ddos-report.mp4" type="video" caption="x2：10 月 22 日 DDoS 攻击的数据与账单记录（详见 DDoS 条目）。" />
+    <Paragraph>
+      这段视频的价值在于引用了**作者后台与云厂商控制台截图**：峰值每分钟 1.54 亿次请求、
+      单日单域名约 21.5 亿次、带宽峰值约为前一日的 76 倍、参与 IP 超过一万个，
+      资源包被打穿、账户余额一度为负。细节见 [DDoS 攻击条目](./ddos.xaml)。
+    </Paragraph>
+  </Section>
+
+  <Section title="x3 线索调查（6:19）">
+    <Media src="./archive/videos/video5-investigation-trace.mp4" type="video" caption="x3：把「后门」指控、账号关联与 2025 年联机节点争议串起来的调查向视频。" />
+    <Paragraph>
+      视频从 10 月 23 日的一篇长文与一张群聊截图切入，串起了几条线：谁最早提出「后门」说法、
+      安全厂商的结论、GitHub 账号被封、以及若干账号之间的关联推断。
+      它自己也明确承认：**关键指控没有直接网络证据**。
+      本站只记录「存在这样的调查」，不复述其中关于具体个人的身份关联推断，
+      相关说明见 [后门指控与调查争议](./disputes.xaml)。
+    </Paragraph>
+  </Section>
+
+  <Section title="x4 推测向复盘（5:21）">
+    <Media src="./archive/videos/video6-rumor-and-speculation.mp4" type="video" caption="x4：把「下载关闭 + DDoS + 谣言 + 封号」串成一条线，倾向认为是有组织打压。" />
+    <Note type="warning">
+      <Paragraph>
+        这段视频**明确承认没有实锤**：作者给出的「动了付费联机/付费启动器的蛋糕」属于推测，
+        时间线接近不等于因果。阅读时请把它当作**一种解释假设**，而不是事实。
+      </Paragraph>
+    </Note>
+    <Paragraph>
+      视频同时给出实用信息：改 `Setup.ini` 关闭更新、断网启动后关闭自动更新、
+      从仓库取旧版本等做法，以及「只用官方渠道、不要用破解版」的提醒。
+    </Paragraph>
+  </Section>
+
+  <Section title="x5 法条与实现差异（4:47）">
+    <Media src="./archive/videos/video7-legal-analysis.mp4" type="video" caption="x5：从《网络出版服务管理规定》与三家启动器的源码实现，解释「为什么是同一天」。" />
+    <Paragraph>
+      这段视频是目前公开材料里**最能解释「集体停手」**的一段：它把法条、版本跳号、
+      HMCL 的 PR 与地区判定实现摆在一起。整理见 [合规与法律视角](./legal.xaml)。
+    </Paragraph>
+  </Section>
+
+  <Section title="原件与转录">
+    <Media src="./archive/videos/video3-day-one-recap.md" type="file" caption="x1 转录稿" />
+    <Media src="./archive/videos/video4-ddos-report.md" type="file" caption="x2 转录稿" />
+    <Media src="./archive/videos/video5-investigation-trace.md" type="file" caption="x3 转录稿" />
+    <Media src="./archive/videos/video6-rumor-and-speculation.md" type="file" caption="x4 转录稿" />
+    <Media src="./archive/videos/video7-legal-analysis.md" type="file" caption="x5 转录稿" />
+  </Section>
+
+  <SeeAlso>
+    <Link slug="videos" title="争议视频归档：后门演示与「云控」分析" />
+    <Link slug="timeline" title="时间线：2026 年 10 月 20 日前后" />
+    <Link slug="ddos" title="DDoS 攻击：2026 年 10 月 22 日" />
+    <Link slug="legal" title="合规与法律视角" />
+    <Link slug="disputes" title="后门指控与调查争议" />
+  </SeeAlso>
+
+  <References>
+    <Ref id="1">五段讲解视频原件与转录稿，整理者提供（2026-10-24 ~ 10-25）。</Ref>
+    <Ref id="2">视频中引用的官方后台与云厂商控制台截图（见 x2）。</Ref>
+  </References>
+</Article>

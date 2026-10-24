@@ -1,0 +1,123 @@
+<Article
+  xmlns="https://pcl2.n0th1n3ssd0ma1n.top/schema/1"
+  xmlns:md="https://pcl2.n0th1n3ssd0ma1n.top/markdown/1"
+  title="合规与法律视角：为什么会是同一天"
+  slug="legal"
+  lang="zh-CN"
+  tags="十月事件,合规,法律,源码对比"
+  updated="2026-10-25"
+  summary="从《网络出版服务管理规定》相关条款、PCL 与 HMCL 的源码级实现差异、版本跳号与 PR 时间，解释三家启动器为什么在同一天集体关闭下载入口。">
+
+  <Infobox>
+    <Infobox.Field label="分析对象">PCL 2.99.0.0、HMCL PR、PCL CE</Infobox.Field>
+    <Infobox.Field label="法条依据">《网络出版服务管理规定》（2016 年生效）</Infobox.Field>
+    <Infobox.Field label="来源">讲解视频 x5 及其转录，条文以官方发布为准</Infobox.Field>
+  </Infobox>
+
+  <Note type="warning">
+    <Paragraph>
+      本页是**公开视频的整理**，不是法律意见。条文的准确含义、适用范围以官方发布与司法实践为准；
+      引用前请自行核对原文。
+    </Paragraph>
+  </Note>
+
+  <Section title="关键区分：玩与发">
+    <Paragraph>
+      视频给出的核心区分是：打开一个<strong>已经装好</strong>的游戏属于本地行为；
+      而把客户端<strong>从服务器下载到别人电脑上</strong>，在监管语境里落入「上网出版」。
+      按这个思路，被收缩的是「提供下载」这件事，不是「使用」这件事。
+    </Paragraph>
+    <List type="unordered">
+      <ListItem>第二条：把网络出版物定义为包含游戏、动漫、音视频读物等。</ListItem>
+      <ListItem>第二十七条：网络游戏上网出版前须先申请、后审批（版号）。</ListItem>
+      <ListItem>第三十二条：提供境外的网络出版物，也需按第二十七条办理。</ListItem>
+      <ListItem>第五十一条：擅自上网出版境外游戏的处罚（取缔、罚款等）。</ListItem>
+    </List>
+    <Paragraph>
+      对照事实：中国版《我的世界》有 ISBN 与「文网游进字」编号，而国际版 Java 客户端在国内没有审批记录。
+    </Paragraph>
+  </Section>
+
+  <Section title="三家实现方式不同，说明什么">
+    <Table>
+      <TableRow header="true">
+        <TableCell>产品</TableCell>
+        <TableCell>实现</TableCell>
+        <TableCell>范围</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>PCL 2.99.0.0</TableCell>
+        <TableCell>源码中的编译期常量（限制下载 = 真），无地区判断、无开关</TableCell>
+        <TableCell>全球一刀切；整合包安装同样受影响</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>HMCL</TableCell>
+        <TableCell>新增地区判定模块：本地层（时区 Asia/Shanghai、国家 CN、设备区域 GeoID 45）+ 网络层（查询出口 IP 的国家码），两层都命中才禁用，且是整页禁用</TableCell>
+        <TableCell>仅中国大陆；正版玩家的下载入口也一并关闭</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>PCL CE</TableCell>
+        <TableCell>同样引入设备区域相关判定</TableCell>
+        <TableCell>中国大陆</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>BakaXL</TableCell>
+        <TableCell>当天无发布或声明</TableCell>
+        <TableCell>—</TableCell>
+      </TableRow>
+    </Table>
+    <Paragraph>
+      三家的差别本身就是信息：如果法条只有一种明确的执行方式，不会出现「全球硬开关」与
+      「地区双判定」两种截然不同的实现。
+    </Paragraph>
+  </Section>
+
+  <Section title="时间与版本号">
+    <List type="unordered">
+      <ListItem>**10-19 深夜**　PCL 发布 2.14.0.0（常规版本）。</ListItem>
+      <ListItem>**10-20 15:01**　直接跳到 **2.99.0.0**，更新日志两行；中间 2.15 – 2.98 全部跳过。</ListItem>
+      <ListItem>**10-20 约 15:22**　HMCL 仓库出现 PR《在中国大陆地区禁用游戏下载功能》，提交者为作者本人。</ListItem>
+      <ListItem>**10-20 约 16:37**　该 PR 被合并——从提交到合并约 75 分钟。</ListItem>
+      <ListItem>**当天**　社区版同步关闭下载入口。</ListItem>
+    </List>
+    <Paragraph>
+      版本号从 2.14 跳到 2.99 通常意味着「必须立即发版」；而 PR 的合并速度说明这不是临时讨论，
+      而是已经形成结论的执行动作。
+    </Paragraph>
+  </Section>
+
+  <Section title="被压下去的那条异议">
+    <Paragraph>
+      视频提到 HMCL 的 PR 下有贡献者当场反对，理由大意是：应当只限制离线玩家的下载渠道，
+      正版玩家直接与微软交互，启动器只是工具、并不提供网络服务；
+      对正版玩家关闭下载反而损害其权利。随后该讨论被标记为偏离主题并关闭。
+    </Paragraph>
+    <Paragraph>
+      这场争论的实质是「<strong>工具算不算提供</strong>」，
+      它决定了风控应该落在「谁能下」还是「谁都不能下」。
+      对读者来说，理解这个分歧比记住结论更有价值。
+    </Paragraph>
+  </Section>
+
+  <Section title="和举报传闻的关系">
+    <Paragraph>
+      流传最广的说法是「某个私服被家长举报，PCL 被顺带举报，然后被要求先关下载」。
+      这段说法**没有任何一方公开证实**。
+      即使它成立，也不构成完整的因果：私服收钱与启动器提供下载是两件事。
+      更贴合公开事实的表述是：**法条长期存在，举报可能只是触发时点**。
+    </Paragraph>
+  </Section>
+
+  <SeeAlso>
+    <Link slug="explainers" title="讲解视频归档：五段事件复盘" />
+    <Link slug="origins" title="起因：家长举报与渠道服关闭" />
+    <Link slug="community-fixes" title="社区应对：补丁、替代启动器与风险" />
+    <Link slug="misreadings" title="常见误读与谣言清单" />
+  </SeeAlso>
+
+  <References>
+    <Ref id="1">讲解视频 x5（法条与实现对比）及其转录稿，整理者提供。</Ref>
+    <Ref id="2">《网络出版服务管理规定》相关条款（以官方发布文本为准）。</Ref>
+    <Ref id="3">HMCL 仓库相关 PR 与其讨论记录（视频中引用的截图）。</Ref>
+  </References>
+</Article>

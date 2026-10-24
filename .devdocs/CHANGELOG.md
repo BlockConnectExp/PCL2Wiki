@@ -135,6 +135,45 @@ version: v26.0-Alpha 1
 
 ---
 
+## 2026.10.25-00:45 ContentDelivery2
+
+ChangedFiles:
+```
+.\package.json +1 -1
+.\public\content\pcl2-oct-events\articles\videos.xaml +180 -0
+.\public\content\pcl2-oct-events\articles\timeline.xaml +150 -0
+.\public\content\pcl2-oct-events\articles\misreadings.xaml +130 -0
+.\public\content\pcl2-oct-events\articles\community-fixes.xaml +120 -0
+.\public\content\pcl2-oct-events\articles\announce-actions.xaml +150 -0
+.\public\content\pcl2-oct-events\articles\sources.xaml +110 -0
+.\public\content\pcl2-oct-events\articles\explainers.xaml +120 -0
+.\public\content\pcl2-oct-events\articles\ddos.xaml +120 -0
+.\public\content\pcl2-oct-events\articles\legal.xaml +140 -0
+.\public\content\pcl2-oct-events\articles\disputes.xaml +130 -0
+.\public\content\pcl2-oct-events\archive\videos\** +12 -0
+.\public\content\pcl2-oct-events\assets\evidence\oct\** +2 -0
+.\public\content\pcl2-oct-events\manifest.json +250 -20
+```
+
+ChangeLog:
+Num|File Name|Change Description|Change Time|Changer
+----|----|----|----|----
+1|videos.xaml|争议视频归档：两段原件内嵌播放 + 转录 + 争议说明|2026.10.25-00:45:00|AI (PCL2Wiki)
+2|timeline.xaml|事件时间线（10-19 ~ 10-24），补 DDoS 与 10-23 回应|2026.10.25-00:45:00|AI (PCL2Wiki)
+3|misreadings.xaml|十条常见误读与谣言澄清|2026.10.25-00:45:00|AI (PCL2Wiki)
+4|community-fixes.xaml|五类社区应对与改版风险|2026.10.25-00:45:00|AI (PCL2Wiki)
+5|announce-actions.xaml|公告系统动作清单与调用链分析|2026.10.25-00:45:00|AI (PCL2Wiki)
+6|sources.xaml|资料来源、存档范围与隐私规则|2026.10.25-00:45:00|AI (PCL2Wiki)
+7|explainers.xaml|五段讲解视频归档（原件内嵌播放 + 转录）|2026.10.25-00:45:00|AI (PCL2Wiki)
+8|ddos.xaml|10-22 DDoS 攻击数据、损失与官方表态|2026.10.25-00:45:00|AI (PCL2Wiki)
+9|legal.xaml|合规与法律视角：法条、三家实现差异|2026.10.25-00:45:00|AI (PCL2Wiki)
+10|disputes.xaml|后门指控与调查争议（三层结论边界）|2026.10.25-00:45:00|AI (PCL2Wiki)
+11|privacy|移除公开包内的账号标识与内部称谓|2026.10.25-00:45:00|AI (PCL2Wiki)
+
+version: v26.0-Alpha 2
+
+---
+
 License: TBD
 
 GitHub@BlockConnectExp | BlockConnectLab@StarsailsClover

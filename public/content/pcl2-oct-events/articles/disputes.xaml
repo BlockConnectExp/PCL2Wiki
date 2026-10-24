@@ -1,0 +1,110 @@
+<Article
+  xmlns="https://pcl2.n0th1n3ssd0ma1n.top/schema/1"
+  xmlns:md="https://pcl2.n0th1n3ssd0ma1n.top/markdown/1"
+  title="后门指控与调查争议"
+  slug="disputes"
+  lang="zh-CN"
+  tags="十月事件,后门,争议,安全,平台处理"
+  updated="2026-10-25"
+  summary="把「后门」指控、安全厂商结论、作者长文回应、GitHub 封号与平台处理按时间排开，并明确区分可核实事实、未证实指控与本站不收录的内容。">
+
+  <Infobox>
+    <Infobox.Field label="争议核心">公告系统的远程动作能力是否构成「后门」</Infobox.Field>
+    <Infobox.Field label="安全厂商结论">设计缺陷，未发现恶意行为（公开结论）</Infobox.Field>
+    <Infobox.Field label="平台处理">视频因涉及真实姓名被下架，申诉后恢复</Infobox.Field>
+    <Infobox.Field label="本站处理">不复述身份关联推断，不收录开盒内容</Infobox.Field>
+  </Infobox>
+
+  <Note type="important">
+    <Paragraph>
+      本页涉及的是**指控与争议**，不是判决。凡是「某人是幕后黑手」「某账号就是某人」这类推断，
+      本站**一律不收录**——包括看起来很有说服力的头像、签名、时间线对照。
+      这类推断一旦挂上具体个人，代价由被指认者承担，而收益为零。
+    </Paragraph>
+  </Note>
+
+  <Section title="时间线">
+    <List type="unordered">
+      <ListItem>**10-21 21:16**　一段演示视频出现，展示公共通道可在用户机上执行命令，术语上被称作「后门」。</ListItem>
+      <ListItem>**10-22 凌晨**　另一账号发布复现演示；当晚该账号宣布「启动调查程序」。</ListItem>
+      <ListItem>**10-22 17:37 起**　PCL 遭到大规模 DDoS（见 [DDoS 条目](./ddos.xaml)）。</ListItem>
+      <ListItem>**10-22 至 10-23**　安全厂商对相关机制给出公开结论：属于**设计缺陷**，未发现恶意行为。</ListItem>
+      <ListItem>**10-23**　作者发布长文回应后门质疑；同期其 GitHub 账号被封禁，公开信息中未见详细理由。</ListItem>
+      <ListItem>**10-23 夜间**　两名质疑方账号在 12 秒内先后宣布「不告了」；其中一方随后留下「不要碰这个话题」之类的发言。</ListItem>
+      <ListItem>**10-23 至 10-24**　作者公开呼吁不要在评论区开盒；相关视频与动态陆续变得不可见或从列表消失。</ListItem>
+    </List>
+  </Section>
+
+  <Section title="三层结论，别混在一起">
+    <Table>
+      <TableRow header="true">
+        <TableCell>层级</TableCell>
+        <TableCell>内容</TableCell>
+        <TableCell>本站态度</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>可复核</TableCell>
+        <TableCell>公告系统具备远程动作能力（动作清单与调用链见 [公告系统分析](./announce-actions.xaml)）；「关闭所有公告」不进止动作；安全厂商给出的公开结论</TableCell>
+        <TableCell>记录并注明来源</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>未证实</TableCell>
+        <TableCell>是否有人恶意利用、GitHub 封禁的真实原因、是否存在有组织的打压、DDoS 与指控之间是否相关</TableCell>
+        <TableCell>只写「存在该说法／尚无证据」</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>不收录</TableCell>
+        <TableCell>身份关联推断、私聊与群聊里的指认、开盒材料、任何可定位到个人的信息</TableCell>
+        <TableCell>不转载、不检索、不提供入口</TableCell>
+      </TableRow>
+    </Table>
+  </Section>
+
+  <Section title="平台与各方的处理">
+    <List type="unordered">
+      <ListItem>**视频平台**：演示视频最初因使用作者真实姓名被投诉下架，申诉理由是「公司法人信息属公开信息」，申诉后恢复。</ListItem>
+      <ListItem>**安全厂商**：公开结论指向「设计缺陷，非恶意行为」——这是目前唯一来自第三方安全机构的定性材料。</ListItem>
+      <ListItem>**代码托管平台**：账号封禁没有公开的详细理由，外界关于「批量举报触发风控」的说法属于推测。</ListItem>
+      <ListItem>**作者**：发布长文回应指控，同时在 DDoS 事件中公开数据与账单，并请求社区不要开盒。</ListItem>
+    </List>
+  </Section>
+
+  <Section title="双方都有人受伤">
+    <Paragraph>
+      这轮争议里，两边付出的代价都是真实的：
+    </Paragraph>
+    <List type="unordered">
+      <ListItem>**作者一侧**：服务被攻击、账号被封、被贴上「后门」标签，还要处理合规压力。</ListItem>
+      <ListItem>**质疑方一侧**：视频作者遭到网络暴力与人身攻击，同时面临投诉与「捂嘴」的质疑。</ListItem>
+    </List>
+    <Paragraph>
+      关于「投诉是不是在压制批评」，本站只能记录**存在这样的说法**，无法核实动机：
+      投诉、要求更正本身是正当权利，判断是否越界要看是否有事实依据、是否针对批评内容本身。
+      但有一点不需要讨论：**对个人的围攻、人肉与开盒，永远不是讨论技术问题的方式**。
+    </Paragraph>
+  </Section>
+
+  <Section title="如果你想自己判断">
+    <List type="ordered">
+      <ListItem>先分清「代码里有什么能力」与「有人做过什么」，前者可复核，后者需要证据。</ListItem>
+      <ListItem>看到截图先问：能不能核验时间、来源、上下文；截图本身不是证据链。</ListItem>
+      <ListItem>看到「肯定是某某干的」先问：如果搞错了，谁承担后果。</ListItem>
+      <ListItem>技术争议交给可复现的过程与第三方结论，而不是站队。</ListItem>
+    </List>
+  </Section>
+
+  <SeeAlso>
+    <Link slug="videos" title="争议视频归档：后门演示与「云控」分析" />
+    <Link slug="announce-actions" title="公告系统与远程动作：技术分析" />
+    <Link slug="ddos" title="DDoS 攻击：2026 年 10 月 22 日" />
+    <Link slug="explainers" title="讲解视频归档：五段事件复盘" />
+    <Link slug="misreadings" title="常见误读与谣言清单" />
+  </SeeAlso>
+
+  <References>
+    <Ref id="1">演示与复现视频、相关动态的转述（见讲解视频 x3、x4 转录稿）。</Ref>
+    <Ref id="2">安全厂商公开结论的转述（设计缺陷、未发现恶意行为）。</Ref>
+    <Ref id="3">作者 2026-10-23 长文回应与其后公开动态的转述。</Ref>
+    <Ref id="4">群聊存档中关于本争议的讨论，2026-10-21 ~ 10-24（本机记录）。</Ref>
+  </References>
+</Article>

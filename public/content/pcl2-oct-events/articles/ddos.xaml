@@ -1,0 +1,105 @@
+<Article
+  xmlns="https://pcl2.n0th1n3ssd0ma1n.top/schema/1"
+  xmlns:md="https://pcl2.n0th1n3ssd0ma1n.top/markdown/1"
+  title="DDoS 攻击：2026 年 10 月 22 日"
+  slug="ddos"
+  lang="zh-CN"
+  tags="十月事件,DDoS,攻击,服务中断"
+  updated="2026-10-25"
+  summary="10 月 22 日傍晚起的大规模请求洪水：峰值每分钟 1.54 亿次、单日约 21.5 亿次请求、超一万个 IP，造成的费用与影响，以及官方两条动态和「不要开盒」的呼吁。">
+
+  <Infobox>
+    <Infobox.Field label="开始时间">2026-10-22 约 17:37（当地）</Infobox.Field>
+    <Infobox.Field label="攻击类型">HTTPS 请求洪水（DDoS）</Infobox.Field>
+    <Infobox.Field label="峰值">约 1.54 亿次 / 分钟</Infobox.Field>
+    <Infobox.Field label="单日请求">约 21.5 亿次（单域名）</Infobox.Field>
+    <Infobox.Field label="直接损失">超 6000 元（含资源包溢出扣费）</Infobox.Field>
+  </Infobox>
+
+  <Note type="warning">
+    <Paragraph>
+      攻击者身份与动机**至今没有官方结论**。本页只记录可核验的数据与官方表态；
+      本站不参与任何「找出是谁」的指认，也**反对开盒**——官方本人也公开呼吁过这一点。
+    </Paragraph>
+  </Note>
+
+  <Section title="攻击数据">
+    <Table>
+      <TableRow header="true">
+        <TableCell>指标</TableCell>
+        <TableCell>数值</TableCell>
+        <TableCell>来源</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>峰值请求速率</TableCell>
+        <TableCell>约 1.54 亿次 / 分钟</TableCell>
+        <TableCell>作者后台截图（经讲解视频 x2 引用）</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>单日单域名请求</TableCell>
+        <TableCell>约 21.5 亿次</TableCell>
+        <TableCell>云厂商控制台截图</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>带宽峰值</TableCell>
+        <TableCell>约 1779.97 Mbps，约为前一日的 76 倍</TableCell>
+        <TableCell>同上</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>参与 IP</TableCell>
+        <TableCell>超过一万个 IPv4 地址</TableCell>
+        <TableCell>同上</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>直接损失</TableCell>
+        <TableCell>资源包被打穿后溢出扣费约 4674 元；作者称直接损失超 6000 元</TableCell>
+        <TableCell>账单截图 + 作者动态</TableCell>
+      </TableRow>
+    </Table>
+  </Section>
+
+  <Section title="时间线">
+    <List type="unordered">
+      <ListItem>**10-22 17:37 前后**　攻击开始，请求量迅速抬升。</ListItem>
+      <ListItem>**18:00 前后**　作者发布第一条动态：部分 PCL 服务因大规模 DDoS 暂不可用，恢复时间未知。</ListItem>
+      <ListItem>**21:19 前后**　账单到达：资源包被打穿，溢出扣费约 4674 元，账户余额一度变为负数。</ListItem>
+      <ListItem>**约 10 分钟后**　作者充值 5000 元，余额恢复为正。</ListItem>
+      <ListItem>**云厂商通知**　CDN 临时限制该域名访问，预计 10-23 17:35 自动恢复；建议启用高防产品。</ListItem>
+      <ListItem>**22:05 前后**　第二条动态：公布攻击数据与损失，表示正在收集线索、准备报警，并请社区**不要在评论区开盒**。</ListItem>
+      <ListItem>**同期**　作者在私人群里被问及后续更新时回答「不一定……之后还接不接着做都不好说」（经同意后被公开）。</ListItem>
+    </List>
+  </Section>
+
+  <Section title="和 10-20 下载关闭的关系">
+    <Paragraph>
+      两件事相隔两天，但**没有证据表明它们相关**：攻击者身份未知，动机未知，
+      也没有任何一方把两者联系起来给出材料。把「时间接近」当成「同一批人所为」，
+      属于典型的因果猜测。
+    </Paragraph>
+    <Paragraph>
+      对用户而言，实际影响是：部分在线服务（更新检查、公告、联机相关）在攻击期间不可用；
+      已安装的游戏与本地功能不受影响。
+    </Paragraph>
+  </Section>
+
+  <Section title="本页的判断边界">
+    <List type="unordered">
+      <ListItem>**可核实**：攻击规模数据、账单与扣费、云厂商限制、作者的两条公开动态。</ListItem>
+      <ListItem>**未核实**：攻击者身份、动机、是否与其它事件同源。</ListItem>
+      <ListItem>**不收录**：任何指着具体个人或群体的「幕后黑手」推断；本站不复述身份关联。</ListItem>
+    </List>
+  </Section>
+
+  <SeeAlso>
+    <Link slug="timeline" title="时间线：2026 年 10 月 20 日前后" />
+    <Link slug="explainers" title="讲解视频归档：五段事件复盘" />
+    <Link slug="disputes" title="后门指控与调查争议" />
+    <Link slug="misreadings" title="常见误读与谣言清单" />
+  </SeeAlso>
+
+  <References>
+    <Ref id="1">讲解视频 x2（DDoS 报告）及其转录稿，整理者提供；视频引用了作者后台与云厂商控制台截图。</Ref>
+    <Ref id="2">作者在 2026-10-22 发布的两条公开动态（内容见视频转录与转述）。</Ref>
+    <Ref id="3">群聊存档中关于攻击当晚的讨论，2026-10-22（本机记录）。</Ref>
+  </References>
+</Article>

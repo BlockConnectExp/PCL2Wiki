@@ -113,7 +113,7 @@ PCL2Wiki 采用「静态内容包 + 客户端解析渲染」的 SPA 架构：
 
 ### D10 命名与版本
 
-- 文件扩展名沿用 Owner 指定的 `.xaml`；方言内部标识为 `pcl2wiki-xaml/1`，避免与 WPF XAML 混淆。
+- 文件扩展名沿用 维护者 指定的 `.xaml`；方言内部标识为 `pcl2wiki-xaml/1`，避免与 WPF XAML 混淆。
 - 项目版本遵循组织规范：`v26.0-Alpha 1` 起步，M0 完成后发 Alpha 1。
 
 ---
@@ -274,7 +274,7 @@ content/
 ### 5.4 内容更新流程
 
 1. 在 `/editor` 写作、预览、导出 `oxygen-mods-26.1.0.wikipkg`。
-2. Owner 把包复制进 `content/`，解压为 `content/oxygen-mods/`（或用 `npm run content:add -- <包路径>` 安全解压）。
+2. 维护者把包复制进 `content/`，解压为 `content/oxygen-mods/`（或用 `npm run content:add -- <包路径>` 安全解压）。
 3. 提交 Git，触发 CI：`lint -> typecheck -> test -> build`。
 4. 构建产物 `dist/` 发布到 GitHub Pages；内容更新不需要改 JS。
 5. 回滚 = 回滚 Git 提交或替换整包目录。
@@ -677,7 +677,7 @@ PCL2Wiki/
 
 待完成：
 
-1. 在 `BlockConnectExp/PCL2Wiki` 安装 giscus GitHub App（仓库权限变更，需要 Owner 确认一次）。
+1. 在 `BlockConnectExp/PCL2Wiki` 安装 giscus GitHub App（仓库权限变更，需要维护者确认一次）。
 2. 安装后把变量 `VITE_GISCUS_ENABLED` 设为 `true` 并重跑 Pages 工作流。
 3. M3：搜索面板、分类导航、标注/引用完善。
 4. M4：内容校验收紧、包迁移工具、英文文档。

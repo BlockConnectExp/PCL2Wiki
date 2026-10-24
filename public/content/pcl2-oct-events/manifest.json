@@ -2,7 +2,7 @@
   "spec": "pcl2wiki-package/1",
   "id": "pcl2-oct-events",
   "title": "PCL2 十月事件",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "language": "zh-CN",
   "entry": "articles/ideology-of-pcl.xaml",
   "description": "PCL2 十月事件（下载功能关闭风波）的事件记录、存档与社区反应。",
@@ -120,6 +120,59 @@
       ],
       "updated": "2026-10-24",
       "summary": "本站用了哪些材料、怎么采集与校验、哪些内容已公开存档、哪些内容只保留在本地而不公开，以及如何引用。"
+    },
+    {
+      "slug": "explainers",
+      "title": "讲解视频归档：五段事件复盘",
+      "source": "articles/explainers.xaml",
+      "tags": [
+        "十月事件",
+        "视频",
+        "复盘",
+        "证据"
+      ],
+      "updated": "2026-10-25",
+      "summary": "事件后流传的五段讲解视频原件与转录：当天复盘、DDoS 报告、线索调查、推测向复盘、法条分析。每段都标出它的结论与自设边界。"
+    },
+    {
+      "slug": "ddos",
+      "title": "DDoS 攻击：2026 年 10 月 22 日",
+      "source": "articles/ddos.xaml",
+      "tags": [
+        "十月事件",
+        "DDoS",
+        "攻击",
+        "服务中断"
+      ],
+      "updated": "2026-10-25",
+      "summary": "10 月 22 日傍晚起的大规模请求洪水：峰值每分钟 1.54 亿次、单日约 21.5 亿次请求、超一万个 IP，造成的费用与影响，以及官方两条动态和「不要开盒」的呼吁。"
+    },
+    {
+      "slug": "legal",
+      "title": "合规与法律视角：为什么会是同一天",
+      "source": "articles/legal.xaml",
+      "tags": [
+        "十月事件",
+        "合规",
+        "法律",
+        "源码对比"
+      ],
+      "updated": "2026-10-25",
+      "summary": "从《网络出版服务管理规定》相关条款、PCL 与 HMCL 的源码级实现差异、版本跳号与 PR 时间，解释三家启动器为什么在同一天集体关闭下载入口。"
+    },
+    {
+      "slug": "disputes",
+      "title": "后门指控与调查争议",
+      "source": "articles/disputes.xaml",
+      "tags": [
+        "十月事件",
+        "后门",
+        "争议",
+        "安全",
+        "平台处理"
+      ],
+      "updated": "2026-10-25",
+      "summary": "把「后门」指控、安全厂商结论、作者长文回应、GitHub 封号与平台处理按时间排开，并明确区分可核实事实、未证实指控与本站不收录的内容。"
     }
   ],
   "assets": [
@@ -332,6 +385,66 @@
       "sha256": "165fdc96d36c73a6b20c5b6e2f5dcd0d54378fcc2a10d9a9c3b29ba3bf931f9d",
       "bytes": 37172,
       "mime": "image/webp"
+    },
+    {
+      "path": "archive/videos/video3-day-one-recap.mp4",
+      "sha256": "f0051ee79a98ce61e5d67779146889d2c871a41740ccd89099882694e1f106d9",
+      "bytes": 8061470,
+      "mime": "video/mp4"
+    },
+    {
+      "path": "archive/videos/video3-day-one-recap.md",
+      "sha256": "906e628735869c10d94ba76b4558799530b8ab38b2c08893effa214337c83f0c",
+      "bytes": 11866,
+      "mime": "text/markdown"
+    },
+    {
+      "path": "archive/videos/video4-ddos-report.mp4",
+      "sha256": "1792c240b1d601a80c7c99a6df209554c3c87deced739e7a3ac67ece5c82bd21",
+      "bytes": 12014324,
+      "mime": "video/mp4"
+    },
+    {
+      "path": "archive/videos/video4-ddos-report.md",
+      "sha256": "404d6db74778f02f854281ff2dd5e5b38a9d9feda7a72f28922c3ae83189f3d7",
+      "bytes": 6134,
+      "mime": "text/markdown"
+    },
+    {
+      "path": "archive/videos/video5-investigation-trace.mp4",
+      "sha256": "ec6247fbfda310a25c2a55f35be20a2816550446d75b184c862556fdec068a4e",
+      "bytes": 18429047,
+      "mime": "video/mp4"
+    },
+    {
+      "path": "archive/videos/video5-investigation-trace.md",
+      "sha256": "87aa109d973b15b69682087332091080b9627154b0a5af42cf8881f5ba599ffd",
+      "bytes": 10743,
+      "mime": "text/markdown"
+    },
+    {
+      "path": "archive/videos/video6-rumor-and-speculation.mp4",
+      "sha256": "54b64d2f2225b04eff4f989295b55555af2221d3e0befb2fd48758217d3a75b0",
+      "bytes": 6868267,
+      "mime": "video/mp4"
+    },
+    {
+      "path": "archive/videos/video6-rumor-and-speculation.md",
+      "sha256": "008c7762dc615e07393e1985d011fd1afdee64cfb713751fc1a6788bcf8209ac",
+      "bytes": 8398,
+      "mime": "text/markdown"
+    },
+    {
+      "path": "archive/videos/video7-legal-analysis.mp4",
+      "sha256": "1663cf04dd32c65b609593d2828dafd5a509c0ae3faace3f2211bda817b4eb4a",
+      "bytes": 11066034,
+      "mime": "video/mp4"
+    },
+    {
+      "path": "archive/videos/video7-legal-analysis.md",
+      "sha256": "196cce9556bc9a8e0c8703c1eb22081c055cd3e2ec89d2cf191443758a9c40e0",
+      "bytes": 9222,
+      "mime": "text/markdown"
     }
   ],
   "generator": "pcl2wiki-archive/0.1.0",
