@@ -167,6 +167,16 @@
     </Table>
   </Section>
 
+  <Section title="当日原始记录">
+    <Gallery>
+      <Media id="tl-1" label="原始记录 1" src="./assets/evidence/oct/timeline/timeline-changelog-2990.webp" type="image" caption="10-21 13:07 · `Elowen Public` 群：启动器内弹出的 2.99.0.0 更新日志，其中一行写着「删除：为遵守相关法律法规，PCL 暂时不再提供 MC 下载功能」。" />
+      <Media id="tl-2" label="原始记录 2" src="./assets/evidence/oct/timeline/timeline-github-issue-9512.webp" type="image" caption="10-20 15:34 · 《暴碧岛》群：GitHub 上由 2.99.0.0 发布自动生成的 issue #9512，随后被锁定。" />
+      <Media id="tl-3" label="原始记录 3" src="./assets/evidence/oct/timeline/timeline-bili-announce.webp" type="image" caption="10-20 18:50 · `Elowen Public` 群：B 站官方动态「悲报【正式版 2.99.0.0】」的截图。" />
+      <Media id="tl-4" label="原始记录 4" src="./assets/evidence/oct/timeline/timeline-group-notice-1514.webp" type="image" caption="10-20 15:55 · 《暴碧岛》群：15:14:50 的群公告，说明各启动器停止下载功能，并给出改 `Setup.ini` 的临时做法。" />
+      <Media id="tl-5" label="原始记录 5" src="./assets/evidence/oct/timeline/timeline-pcl-dialog.webp" type="image" caption="10-21 18:02 · `Mass社区交流群`：启动器内的提示弹窗原文。" />
+    </Gallery>
+  </Section>
+
   <SeeAlso>
     <Link slug="origins" title="起因：家长举报与渠道服关闭" />
     <Link slug="misreadings" title="常见误读与谣言清单" />

@@ -2,7 +2,7 @@
   "spec": "pcl2wiki-package/1",
   "id": "pcl2-oct-events",
   "title": "PCL2 十月事件",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "language": "zh-CN",
   "entry": "articles/ideology-of-pcl.xaml",
   "description": "PCL2 十月事件（下载功能关闭风波）的事件记录、存档与社区反应。",
@@ -445,6 +445,138 @@
       "sha256": "196cce9556bc9a8e0c8703c1eb22081c055cd3e2ec89d2cf191443758a9c40e0",
       "bytes": 9222,
       "mime": "text/markdown"
+    },
+    {
+      "path": "assets/evidence/oct/origins/origins-appstore-01.webp",
+      "sha256": "bf71253c2ee469f958b2e27bf2bf0ef69c8865bf4ab92caad7e1f12249723c5b",
+      "bytes": 126620,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/origins/origins-appstore-02.webp",
+      "sha256": "38bd51fd31243ebd3eb01e068a3aad4e54e0c4d14cb8cce58d79973a55ee65a4",
+      "bytes": 104330,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/origins/origins-admin-quote.webp",
+      "sha256": "f7d2fcd3cc3f6fa92a520d88d6f896a3e1a351edeb61c658cccdb43f2b50d6a1",
+      "bytes": 7474,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/origins/origins-group-clarify.webp",
+      "sha256": "ca818aff7c7a8d9ef8f7f46eb362729cebd0d344f8b40aac9c3769a3c20836ff",
+      "bytes": 25438,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/timeline/timeline-changelog-2990.webp",
+      "sha256": "3183738acd26c24b539b870dddda6251f02a648b3efffb16d15b0e8cd0156367",
+      "bytes": 17770,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/timeline/timeline-github-issue-9512.webp",
+      "sha256": "a8566ead388a52a640c7f2aafe86971fc638f910c78d6fef03dae7ce2bb35065",
+      "bytes": 15642,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/timeline/timeline-bili-announce.webp",
+      "sha256": "5db5cff6d63242fd41f6840e3c49ca9099563e1cbfba8210b9a7695b7b8d47fe",
+      "bytes": 24910,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/timeline/timeline-group-notice-1514.webp",
+      "sha256": "fdd9a5fbca2b6439db3ef390b82a66989b21876e2a904bca5d6cf82531fd5db0",
+      "bytes": 60354,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/timeline/timeline-pcl-dialog.webp",
+      "sha256": "7f76aeca8b8346ce7f0d5f048cea716ed9ba842e2977de05dc5e68c68f00acfa",
+      "bytes": 12800,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/legal/legal-hmcl-workflow.webp",
+      "sha256": "f0fb6d8783e47be2ac1437fbf74ec2a49913ed73edbebca254f837a48035b3cd",
+      "bytes": 71794,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/legal/legal-source-restrict.webp",
+      "sha256": "6d46b40d95594a647d57ad0500cef1cf808f673dde0c76b6863b4c62088f5a17",
+      "bytes": 91924,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/legal/legal-source-diff-01.webp",
+      "sha256": "7a18bec4d8fa5aa4a13f35b55dffa84feaad5571177cff3cf543383d82b04128",
+      "bytes": 55520,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/legal/legal-pcl-tag-2990.webp",
+      "sha256": "c7135b9068e71a9d9d368170dc60f598cbfff62e5e51416825932d940ad9668c",
+      "bytes": 96466,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/legal/legal-zhihu-hmcl-pcl.webp",
+      "sha256": "03c9ac2078830a0f78417f918f2f6654f3a281a080ddc9945bd7276c17298ac4",
+      "bytes": 67452,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/community-fixes/fixes-warning-exe-01.webp",
+      "sha256": "dadaef0484fae4b53375784c4cd409a7419be4eac5a321f8212391e62d0c1791",
+      "bytes": 25898,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/community-fixes/fixes-warning-exe-02.webp",
+      "sha256": "21da0f67920e927fd06628239df8af45ce1c1e6d3a3d49482c10cf0951227430",
+      "bytes": 25438,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/community-fixes/fixes-pcl-settings.webp",
+      "sha256": "46de86c2dc1238712a092f603aa1f1a5d9b7aa6e95cd9ee1e4e145e886c17ebb",
+      "bytes": 26268,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/community-fixes/fixes-github-releases.webp",
+      "sha256": "5124da5e2d2634167951db17f3799a51ca8d2349ce6ee35818eaa9b86e91a0e3",
+      "bytes": 24090,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/community-fixes/fixes-pcl-download-page.webp",
+      "sha256": "ca24e46d8ec0ff84f73cddc3fb16efefc936b2a0b3eb8396c67db887d31fb580",
+      "bytes": 31408,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/disputes/disputes-author-reply.webp",
+      "sha256": "ca200cc76e33e817aa614f02235fc6e473c57dd4811a5f6e3eb7fcfa707f45de",
+      "bytes": 29140,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/disputes/disputes-official-note.webp",
+      "sha256": "66ab84046ee6847c4ef29bb96c1a58bcc3060e23ee6265379ae5b704d74be7c9",
+      "bytes": 6940,
+      "mime": "image/webp"
+    },
+    {
+      "path": "assets/evidence/oct/videos/videos-official-dynamic.webp",
+      "sha256": "2fd009512c30dde894fc1af18504b23bd63e2db466fc7dfbbf1280e23b4efae6",
+      "bytes": 44554,
+      "mime": "image/webp"
     }
   ],
   "generator": "pcl2wiki-archive/0.1.0",

@@ -97,6 +97,16 @@
     </List>
   </Section>
 
+  <Section title="当时的提醒与界面">
+    <Gallery>
+      <Media id="cf-1" label="应对图 1" src="./assets/evidence/oct/community-fixes/fixes-warning-exe-01.webp" type="image" caption="10-20 16:24 · `EPSILON` 群：提醒不要运行群里传播的改版 exe，「已经有人中毒了」。" />
+      <Media id="cf-2" label="应对图 2" src="./assets/evidence/oct/community-fixes/fixes-warning-exe-02.webp" type="image" caption="10-20 19:00 · `Elowen Public` 群：另一群的同款提醒，措辞一致。" />
+      <Media id="cf-3" label="应对图 3" src="./assets/evidence/oct/community-fixes/fixes-pcl-settings.webp" type="image" caption="10-20 15:58 · 启动器设置界面，可见自动更新与公告相关选项。" />
+      <Media id="cf-4" label="应对图 4" src="./assets/evidence/oct/community-fixes/fixes-github-releases.webp" type="image" caption="10-20 15:14 · GitHub Releases 页面——旧版本的正规来源。" />
+      <Media id="cf-5" label="应对图 5" src="./assets/evidence/oct/community-fixes/fixes-pcl-download-page.webp" type="image" caption="10-21 13:07 · 更新后的下载页：入口被替换为提示文案。" />
+    </Gallery>
+  </Section>
+
   <SeeAlso>
     <Link slug="timeline" title="时间线：2026 年 10 月 20 日前后" />
     <Link slug="misreadings" title="常见误读与谣言清单" />

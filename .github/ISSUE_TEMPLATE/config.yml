@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 讨论区（一般讨论 / 提问）
+    url: https://github.com/BlockConnectExp/PCL2Wiki/discussions
+    about: 不适合走 issue 的讨论、提问与想法，请发到 Discussions。
+  - name: 隐私与删除请求（私下渠道）
+    url: https://github.com/BlockConnectExp/PCL2Wiki/security/advisories/new
+    about: 涉及个人隐私的删除、打码或更正请求，请走私密渠道，不要发在公开 issue 里。

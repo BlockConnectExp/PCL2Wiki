@@ -73,6 +73,21 @@
     <Media src="./archive/chat/tianyang-2026-10-20.zip" type="file" caption="下载原始群聊素材（zip，8 张截图，含原始文件名）" />
   </Section>
 
+  <Section title="当日截图（补充）">
+    <Gallery>
+      <Media id="org-1" label="起因图 1" src="./assets/evidence/oct/origins/origins-appstore-01.webp" type="image" caption="10-20 16:31 · `EPSILON` 群 · @问题找我：应用商店搜索「我的世界」，结果只剩社区、工坊等条目，本体未出现。" />
+      <Media id="org-2" label="起因图 2" src="./assets/evidence/oct/origins/origins-appstore-02.webp" type="image" caption="10-20 17:12 · `Elowen Public` 群 · @南影：另一台设备上的同款搜索结果。" />
+      <Media id="org-3" label="起因图 3" src="./assets/evidence/oct/origins/origins-admin-quote.webp" type="image" caption="10-20 15:51 · `EPSILON` 群：作者在群内的原话——某个 MC 服务器有未成年充值、随后被举报，PCL 被顺带举报。" />
+      <Media id="org-4" label="起因图 4" src="./assets/evidence/oct/origins/origins-group-clarify.webp" type="image" caption="10-20 23:22 · 群内转述起因并提醒「不要乱传」。" />
+    </Gallery>
+    <Note type="note">
+      <Paragraph>
+        以上截图均为**群内传播的原始截图**，用来记录信息是如何扩散的；
+        其中「应用商店搜不到」与「PCL 被连带举报」是两件独立的事，见上文的分因说明。
+      </Paragraph>
+    </Note>
+  </Section>
+
   <SeeAlso>
     <Link slug="ideology-of-pcl" title="PCL 2 的意识形态（cubk 存档）" />
     <Link slug="evidence" title="证据存档预览" />

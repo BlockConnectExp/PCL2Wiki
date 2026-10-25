@@ -108,6 +108,21 @@
     </Paragraph>
   </Section>
 
+  <Section title="原始截图">
+    <Gallery>
+      <Media id="lg-1" label="法律图 1" src="./assets/evidence/oct/legal/legal-hmcl-workflow.webp" type="image" caption="10-20 18:32 · 群内转发的 HMCL 仓库页面，工作流名称为「中国大陆地区禁用 Minecraft 安装功能」。" />
+      <Media id="lg-2" label="法律图 2" src="./assets/evidence/oct/legal/legal-source-restrict.webp" type="image" caption="10-20 21:48 · 源码截图：与下载限制相关的常量定义。" />
+      <Media id="lg-3" label="法律图 3" src="./assets/evidence/oct/legal/legal-source-diff-01.webp" type="image" caption="10-20 19:36 · 群内贴出的实现差异对照（一）。" />
+      <Media id="lg-4" label="法律图 4" src="./assets/evidence/oct/legal/legal-pcl-tag-2990.webp" type="image" caption="10-20 16:08 · PCL 仓库的 2.99.0.0 标签页，发布说明即那两行公告。" />
+      <Media id="lg-5" label="法律图 5" src="./assets/evidence/oct/legal/legal-zhihu-hmcl-pcl.webp" type="image" caption="10-20 16:53 · 第三方文章《HMCL 和 PCL 停止了中国大陆地区…》，属于当时的公开梳理。" />
+    </Gallery>
+    <Note type="note">
+      <Paragraph>
+        截图只证明「当时确实有人这样实现、这样讨论」，条文含义与适用仍以官方文本为准。
+      </Paragraph>
+    </Note>
+  </Section>
+
   <SeeAlso>
     <Link slug="explainers" title="讲解视频归档：五段事件复盘" />
     <Link slug="origins" title="起因：家长举报与渠道服关闭" />

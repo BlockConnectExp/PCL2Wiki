@@ -1,0 +1,33 @@
+name: 新条目建议
+description: 建议新增的条目、章节或需要补充的方向
+title: '[新条目] '
+labels: ['新条目']
+body:
+  - type: input
+    id: title
+    attributes:
+      label: 建议标题
+      placeholder: 例如：2025 年 11 月联机节点风波
+    validations:
+      required: true
+  - type: textarea
+    id: outline
+    attributes:
+      label: 要写什么
+      description: 列出要点、涉及的人物（公开身份）、时间范围
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: 可用来源
+      description: 你手上或公开可查的材料
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      options:
+        - label: 该建议不包含他人隐私信息
+          required: true

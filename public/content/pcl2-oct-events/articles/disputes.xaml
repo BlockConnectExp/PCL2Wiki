@@ -93,6 +93,19 @@
     </List>
   </Section>
 
+  <Section title="相关截图">
+    <Gallery>
+      <Media id="dp-1" label="争议图 1" src="./assets/evidence/oct/disputes/disputes-author-reply.webp" type="image" caption="10-21 16:26 · `大登招待所` 群：作者对「举报逻辑」的讽刺回应（原话照录，不代表本站立场）。" />
+      <Media id="dp-2" label="争议图 2" src="./assets/evidence/oct/disputes/disputes-official-note.webp" type="image" caption="10-20 17:41 · 群内转发：官方「暂不提供 MC 下载功能」的声明截图。" />
+    </Gallery>
+    <Note type="important">
+      <Paragraph>
+        关于账号关联的推断性截图，本站**不予收录**；如果你手上有可核验的直接证据（而不是头像、签名、时间线对照），
+        请通过 issue 按 [贡献规范](https://github.com/BlockConnectExp/PCL2Wiki/blob/main/CONTRIBUTING.md) 提交。
+      </Paragraph>
+    </Note>
+  </Section>
+
   <SeeAlso>
     <Link slug="videos" title="争议视频归档：后门演示与「云控」分析" />
     <Link slug="announce-actions" title="公告系统与远程动作：技术分析" />

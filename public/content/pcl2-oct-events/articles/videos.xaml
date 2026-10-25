@@ -158,6 +158,7 @@
   </Section>
 
   <Section title="原件与转录">
+    <Media src="./assets/evidence/oct/videos/videos-official-dynamic.webp" type="image" caption="10-20 17:50 · 群内转发的作者动态原文截图（含点赞数），用于对照视频里的转述。" />
     <Media src="./archive/videos/video1-transcript.md" type="file" caption="v1 转录稿（Markdown）" />
     <Media src="./archive/videos/video2-transcript.md" type="file" caption="v2 转录稿与要点整理（Markdown）" />
     <Paragraph>

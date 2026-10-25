@@ -1,0 +1,70 @@
+name: 补充材料
+description: 提供新的一手材料（截图、链接、文件、聊天记录）
+title: '[补充材料] '
+labels: ['补充材料', '待核实']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢补充。请**只提交你有权分享、且不涉及他人隐私**的材料。
+        涉及证件、住址、亲属、联系方式、开盒内容的材料本站一律不收录，请勿上传。
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 材料类型
+      options:
+        - 截图 / 图片
+        - 视频
+        - 外部链接（文章、动态、仓库）
+        - 聊天记录 / 合并转发
+        - 官方文件或公告
+        - 其它
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: 材料内容
+      description: 直接粘贴文本，或把图片/文件拖进来（GitHub 会自动上传）
+      placeholder: 把截图拖到此处，或粘贴链接与文字
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: 来源
+      description: 谁在什么平台发布的？尽量给原始链接或群名
+      placeholder: 例如：@某人 在 XX 群发布 / https://www.bilibili.com/opus/xxx
+    validations:
+      required: true
+  - type: input
+    id: time
+    attributes:
+      label: 时间
+      description: 材料产生的时间（精确到分钟最好）
+      placeholder: 2026-10-20 15:44
+    validations:
+      required: true
+  - type: dropdown
+    id: usage
+    attributes:
+      label: 希望用在
+      options:
+        - 时间线
+        - 起因
+        - 争议视频 / 讲解视频
+        - DDoS
+        - 合规与法律
+        - 后门指控与调查
+        - 其它 / 由维护者判断
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      options:
+        - label: 材料不包含他人隐私信息（证件、住址、亲属、联系方式等）
+          required: true
+        - label: 我确认可以按站点许可分发这份材料
+          required: true
